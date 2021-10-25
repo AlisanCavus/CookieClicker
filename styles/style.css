@@ -1,16 +1,17 @@
-html {  
+html {
     height: 100%;
+    width: 100%;
 }
 
 body {  
 margin: 0;
 padding: 0;
-height: 1005;
-background: -webkit-linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
-background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
+height: 100%;
+width: 100%;
+background: -webkit-linear-gradient(-180deg, rgb(229, 240, 132), rgb(89, 203, 96));
+background: linear-gradient(-180deg, rgb(229, 240, 132), rgb(89, 203, 96));
 background-size: cover;
 background-repeat: no-repeat;
-background-attachment: fixed;
 }
 
 .click {  
@@ -22,6 +23,17 @@ background-attachment: fixed;
     background:transparent;
 }
 
-.bgcolnav { 
+.bgcolnavbut { 
     background: transparent !important;
+    border: none;
+    
+}
+
+.butbut{ 
+    background: transparent !important;
+    border: 1px solid ;
+}
+
+img.cookie {    
+    transition: 
 }
