@@ -1,8 +1,7 @@
 (() => {
-    
     //check if there is a 'score' variable already in local storage, creates one if not. Displays the score.
     var score = localStorage.hasOwnProperty("score") ? true : localStorage.setItem("score", 0); 
-    document.getElementById("score").innerHTML = score;
+/*     document.getElementById("score").innerHTML = score; */
 
     //setting the multiplier factor. Default is one, increases when player buys an upgrade
     var mult = 1;
@@ -32,23 +31,23 @@
         2: 0,
         3: 0
     }
-
     //cookie click event
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + mult;
-        document.getElementById("target").innerHTML = localStorage.clicker;
+/*         document.getElementById("target").innerHTML = localStorage.clicker; */
+        console.log(localStorage.score);
     });  
 
     //multiplier button click event
-    document.querySelectorAll("button.bonus").forEach($btn =>
+/*      document.querySelectorAll("button.bonus").forEach($btn =>
         $btn.addEventListener(
             "click",
             () => (performOperation($btn.id), false),
         ),
-    );
+    ); 
     
     //autoclicker button click event
-    document.querySelectorAll("button.multiplier").forEach($btn =>
+     document.querySelectorAll("button.multiplier").forEach($btn =>
         $btn.addEventListener(
             "click",
             () => {
@@ -58,7 +57,7 @@
     );
 
     //restart button click event
-    document.getElementById("cookie").addEventListener("click",() => {
+    document.getElementById("restart").addEventListener("click",() => {
         //set score back to 0
         var score = localStorage.setItem("score", 0); 
         document.getElementById("score").innerHTML = score;
@@ -70,6 +69,6 @@
         for (var item in autoClickerStatus) {
             multiplierStatus[item] = 0;
         }
-    });  
+    });   */
 
 })();
