@@ -22,7 +22,7 @@
     document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${team[1]}`;
     document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${team[2]}`;
 
-    //create an array to keep the intervals
+    //create an array to keep the intervals. This way we can loop through the array to clear all intervals on restart
     const interval = [];
 
     //multiplier and autoclicker prices
@@ -38,7 +38,7 @@
         2 : 12
     }
 
-    //set multiplier status --max 1 of each multiplier can be bought
+    //set multiplier status. 1 of each multiplier can be bought
     var multiplierStatus = {
         "x2": 0,
         "x3": 0,
@@ -47,13 +47,13 @@
 
     //check if there is a 'multiplierStatus' variable already in local storage, create one if not
     localStorage.hasOwnProperty("multiplierStatus") ? multiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")) : localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus)); 
-   //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
+    //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
 
     //bonus timer
     var bonus = 1;
     var timerId; //setting a global scope variable that can be accesed by the onclick event and countdown()
     var bonusOn = false; //switch to prevent user from creating more than one setInterval bonus
-    var bonusTimer = 5;
+    var bonusTimer = 5; //testing value, should be 30
     document.getElementById("bonus").addEventListener("click",() => {
             if (!bonusOn) {
                 bonusOn = true;
@@ -65,11 +65,11 @@
 
     function countdown() {
         if (bonusTimer == -1) {
-          clearTimeout(timerId);
-          bonus = 1;
-          bonusOn = false;
-          bonusTimer = 30;
-          document.getElementById("bonus").innerHTML = "Bonus"
+            clearTimeout(timerId);
+            bonus = 1;
+            bonusOn = false;
+            bonusTimer = 5; //testing value, should be 30
+            document.getElementById("bonus").innerHTML = "Bonus"
         } else {
             document.getElementById("bonus").innerHTML = bonusTimer + " seconds"
             bonusTimer--;
@@ -81,19 +81,19 @@
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
         document.getElementById("score").innerHTML = localStorage.score;
-        console.log(localStorage.score);
+        console.log(localStorage.score); //test log, to be removed
     });
     
-    //winky cookie + size increase on mousedown
+    //winky cookie image + size increase on mousedown
     document.getElementById("cookie").addEventListener("mousedown",() => {
         document.getElementById("cookie").src = "./images/cookie1.png";
-        document.getElementById("cookie").style.transform = "scale(1.2)";
+        document.getElementById("cookie").style.transform = "scale(1.1)";
     });
 
-    //normal cookie + size decrease on mouseup
+    //normal cookie image + size decrease on mouseup
     document.getElementById("cookie").addEventListener("mouseup",() => {
         document.getElementById("cookie").src = "./images/cookie.png";
-        document.getElementById("cookie").style.transform = "scale(1.1)";
+        document.getElementById("cookie").style.transform = "scale(1.0)";
     });
 
     //multiplier button click event
@@ -130,7 +130,7 @@
         interval.push(setInterval(() => {
             localStorage.score = parseInt(localStorage.score) + (parseInt(timer) + 3);
             document.getElementById("score").innerHTML = localStorage.score;
-            console.log(localStorage.score)
+            console.log(localStorage.score) //test log, to be removed
         }, 2000 * (parseInt(timer) + 2)));
 
         document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${team[0]}`;
@@ -149,6 +149,4 @@
         //refresh page to trigger script from the beginning
         window.location.reload();
     });   
-
-
 })();
