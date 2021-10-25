@@ -52,7 +52,7 @@
         localStorage.score = parseInt(localStorage.score) + parseInt(localStorage.mult);
         document.getElementById("score").innerHTML = localStorage.score;
         console.log(localStorage.score);
-    });  
+    });
 
     //multiplier button click event
     document.querySelectorAll("button.multiplier").forEach(btn =>
@@ -66,7 +66,7 @@
                 }
             }),
     );
-    
+
     //autoclicker button click event
     document.querySelectorAll("button.autoclicker").forEach(btn =>
         btn.addEventListener(
@@ -121,4 +121,26 @@
         document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${team[2]}`;
     }
 
+/* 
+    let buttonCookie = document.getElementsByClassName("click")[0];
+    // let tranform = false;
+    buttonCookie.addEventListener("click", () => {
+        buttonCookie.style.transform = "scale(1.1)";
+    setTimeout(cookie,10);
+       // buttonCookie.style.transform = "scale(1.0)";
+       // buttonCookie.style.transition = "scale(1.0) 1s";
+    //    transform = true;
+    })
+    function cookie () {
+        buttonCookie.addEventListener("focusout", ()=>{
+            buttonCookie.style.transform = "scale(1.0)";
+        });
+    } */
+   
+    // buttonCookie.addEventListener("change",()=> {
+    //     if(tranform === true){
+    //         buttonCookie.style.transition = "scale(1.0) 1s";
+    //         tranform = false;
+    //     }
+    // })
 })();
