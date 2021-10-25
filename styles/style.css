@@ -1,6 +1,6 @@
 html {
-    height: 100%;
-    width: 100%;
+    min-height: max-content
+    
 }
 
 body {  
@@ -35,10 +35,10 @@ background-repeat: no-repeat;
 
 .click {  
     margin: 0;
-    padding: 0;  
+    padding: 0;
     width:100%;
-    max-height: fit-content;
     border: none;
+    max-height: fit-content;
     background:transparent;
 }
 
