@@ -1,12 +1,13 @@
-html {  
+html {
     height: 100%;
+    width: 100%;
 }
 
 body {  
 margin: 0;
 padding: 0;
-height: 1005;
-
+width: 100%;
+height: 100%;
 
 background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
 background: linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
@@ -30,7 +31,6 @@ background: radial-gradient(rgb(95, 147, 154), rgb(58, 99, 81)); */
 background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23)); */
 background-size: cover;
 background-repeat: no-repeat;
-background-attachment: fixed;
 }
 
 .click {  
@@ -42,6 +42,25 @@ background-attachment: fixed;
     background:transparent;
 }
 
-.bgcolnav { 
+.bgcolnavbut { 
     background: transparent !important;
+    border: none;
+    
 }
+
+.butbut{ 
+    background: transparent !important;
+    border: 1px solid ;
+}
+/* #cookie:hover {
+    /* width: 256px;
+    height: 256px;
+    position: absolute;
+    /* left: -128px; */
+    /* top: -128px; */
+    /* background: url(img/empty.png); */
+    /* cursor: pointer; */
+    /* z-index: 10000; */
+    /*border-radius: 128px; 
+} */
+
