@@ -1,9 +1,16 @@
+html {  
+    height: 100%;
+}
+
 body {  
 margin: 0;
 padding: 0;
+height: 1005;
 background: -webkit-linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
 background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
 background-size: cover;
+background-repeat: no-repeat;
+background-attachment: fixed;
 }
 
 .click {  
@@ -13,4 +20,8 @@ background-size: cover;
     max-height: fit-content;
     border: none;
     background:transparent;
+}
+
+.bgcolnav { 
+    background: transparent !important;
 }
