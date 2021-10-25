@@ -1,0 +1,16 @@
+body {  
+margin: 0;
+padding: 0;
+background: -webkit-linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
+background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
+background-size: cover;
+}
+
+.click {  
+    margin: 0;
+    padding: 0;  
+    width:100%;
+    max-height: fit-content;
+    border: none;
+    background:transparent;
+}
