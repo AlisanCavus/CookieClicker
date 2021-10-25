@@ -32,7 +32,9 @@ background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23)); */
 background-size: cover;
 background-repeat: no-repeat;
 }
-
+.heading {
+    text-align: center;
+}
 .click {  
     margin: 0;
     padding: 0;
