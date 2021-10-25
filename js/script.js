@@ -18,9 +18,9 @@
     //var parseTeam = JSON.parse(localStorage.getItem("team")); //not needed atm
 
     //display autoclickers
-    document.getElementById("alisan").innerHTML = `Alisan(s) making cookies: ${team[0]}`;
-    document.getElementById("daniel").innerHTML = `Daniel(s) making cookies: ${team[1]}`;
-    document.getElementById("shivani").innerHTML = `Shivani(s) making cookies: ${team[2]}`;
+    document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${team[0]}`;
+    document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${team[1]}`;
+    document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${team[2]}`;
 
     //create an array to keep the intervals
     const interval = [];
@@ -48,11 +48,37 @@
     //check if there is a 'multiplierStatus' variable already in local storage, create one if not
     localStorage.hasOwnProperty("multiplierStatus") ? multiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")) : localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus)); 
    //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
-    
+
+    //bonus timer
+    var bonus = 1;
+    var timerId; //setting a global scope variable that can be accesed by the onclick event and countdown()
+    var bonusOn = false; //switch to prevent user from creating more than one setInterval bonus
+    var bonusTimer = 5;
+    document.getElementById("bonus").addEventListener("click",() => {
+            if (!bonusOn) {
+                bonusOn = true;
+                bonus = 2;
+                timerId = setInterval(countdown, 1000);
+            }
+        }
+    )
+
+    function countdown() {
+        if (bonusTimer == -1) {
+          clearTimeout(timerId);
+          bonus = 1;
+          bonusOn = false;
+          bonusTimer = 30;
+          document.getElementById("bonus").innerHTML = "Bonus"
+        } else {
+            document.getElementById("bonus").innerHTML = bonusTimer + " seconds"
+            bonusTimer--;
+        }
+    }     
 
     //cookie click event
     document.getElementById("cookie").addEventListener("click",() => {
-        localStorage.score = parseInt(localStorage.score) + parseInt(localStorage.mult);
+        localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
         document.getElementById("score").innerHTML = localStorage.score;
         console.log(localStorage.score);
     });
