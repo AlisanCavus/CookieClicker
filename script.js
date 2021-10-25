@@ -8,9 +8,9 @@
 
     //multiplier and autoclicker prices
     const multiplierPrices = {
-        1: 100,
-        2: 500,
-        3: 1000
+        "x2": 100,
+        "x3": 500,
+        "x4": 1000
     }
 
     const autoClickerPrices = {
@@ -21,9 +21,9 @@
 
     //multiplier and autoclicker status (1 used / 0 not used)
     const multiplierStatus = {
-        1: 100,
-        2: 10000,
-        3: 10
+        "x2": 0,
+        "x3": 0,
+        "x4": 0
     }
 
     const autoClickerStatus = {
@@ -34,30 +34,42 @@
     //cookie click event
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + mult;
-/*         document.getElementById("target").innerHTML = localStorage.clicker; */
+/*         document.getElementById("score").innerHTML = localStorage.score; */
         console.log(localStorage.score);
     });  
 
     //multiplier button click event
-/*      document.querySelectorAll("button.bonus").forEach($btn =>
-        $btn.addEventListener(
-            "click",
-            () => (performOperation($btn.id), false),
-        ),
-    ); 
-    
-    //autoclicker button click event
-     document.querySelectorAll("button.multiplier").forEach($btn =>
-        $btn.addEventListener(
+/*     document.querySelectorAll("button.multiplier").forEach(btn =>
+        btn.addEventListener(
             "click",
             () => {
-
+                if (multiplierStatus[btn.id] === 0 && score >= multiplierPrices[btn.id]) {
+                    multiplierStatus[btn.id] = 1;
+                    mult += 1;
+                    score -= multiplierPrices[btn.id];
+                    //document.getElementById("score").innerHTML = localStorage.score;                   console.log(localStorage.score); //test log, to be removed
+                }
+            }),
+    ); */
+    
+    //autoclicker button click event
+/*     document.querySelectorAll("button.autoclicker").forEach(btn =>
+        btn.addEventListener(
+            "click",
+            () => {
+                if (autoClickerStatus[btn.id] === 0 && score >= autoClickerPrices[btn.id]) {
+                    autoClickerStatus[btn.id] = 1;
+                    score -= autoClickerPrices[btn.id];
+                    //document.getElementById("score").innerHTML = localStorage.score;
+                    console.log(localStorage.score); //test log, to be removed
+                    autoclickerFunction()
+                }
             }
         ),
-    );
+    ); */
 
     //restart button click event
-    document.getElementById("restart").addEventListener("click",() => {
+/*     document.getElementById("restart").addEventListener("click",() => {
         //set score back to 0
         var score = localStorage.setItem("score", 0); 
         document.getElementById("score").innerHTML = score;
@@ -69,6 +81,10 @@
         for (var item in autoClickerStatus) {
             multiplierStatus[item] = 0;
         }
-    });   */
+    }); */  
+
+    function autoclickerFunction() {
+        
+    }
 
 })();
