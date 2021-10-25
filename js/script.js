@@ -131,7 +131,7 @@
             localStorage.score = parseInt(localStorage.score) + (parseInt(timer) + 3);
             document.getElementById("score").innerHTML = localStorage.score;
             console.log(localStorage.score)
-        }, 2000 * (timer)))
+        }, 2000 * (parseInt(timer) + 2)));
 
         document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${team[0]}`;
         document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${team[1]}`;
