@@ -52,4 +52,15 @@ background-repeat: no-repeat;
     background: transparent !important;
     border: 1px solid ;
 }
+/* #cookie:hover {
+    /* width: 256px;
+    height: 256px;
+    position: absolute;
+    /* left: -128px; */
+    /* top: -128px; */
+    /* background: url(img/empty.png); */
+    /* cursor: pointer; */
+    /* z-index: 10000; */
+    /*border-radius: 128px; 
+} */
 
