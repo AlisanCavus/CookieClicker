@@ -1,35 +1,33 @@
 (() => {
     //check if there is a 'score' variable already in local storage, creates one if not. Displays the score.
     localStorage.hasOwnProperty("score") ? true : localStorage.setItem("score", 0); 
-/*     document.getElementById("score").innerHTML = score; */
+/*     document.getElementById("score").innerHTML = localStorage.score; */
 
     //setting the multiplier factor. Default is one, increases when player buys an upgrade
     var mult = 1;
 
     //set number of autoclickers and displays them
     const team = {
+        0: 0,
         1: 0,
-        2: 0,
-        3: 0
+        2: 0
     }
-/*     var Alisan = 0;
-    var Daniel = 0 ;
-    var Shivani = 0 */
-/*     document.getElementById("alisan").innerHTML = `Alisan(s) making cookies for you: ${team[0]}`;
-    document.getElementById("daniel").innerHTML = `Daniel(s) making cookies for you: ${team[1]}`;
-    document.getElementById("shivani").innerHTML = `Shivani(s) making cookies for you: ${team[2]}`; */
+
+/*     document.getElementById("alisan").innerHTML = `Alisan(s) making cookies: ${team[0]}`;
+    document.getElementById("daniel").innerHTML = `Daniel(s) making cookies: ${team[1]}`;
+    document.getElementById("shivani").innerHTML = `Shivani(s) making cookies: ${team[2]}`; */
 
     //multiplier and autoclicker prices
     const multiplierPrices = {
-        "x2": 10,
-        "x3": 50,
-        "x4": 100
+        "x2": 1,
+        "x3": 5,
+        "x4": 10
     }
 
     const autoClickerPrices = {
-        0 : 30,
-        1 : 70,
-        2 : 120
+        0 : 3,
+        1 : 7,
+        2 : 12
     }
 
     //multiplier and autoclicker status (1 used / 0 not used)
@@ -60,13 +58,12 @@
     );
     
     //autoclicker button click event
-/*     document.querySelectorAll("button.autoclicker").forEach(btn =>
+    document.querySelectorAll("button.autoclicker").forEach(btn =>
         btn.addEventListener(
             "click",
             () => {
-                if (score >= autoClickerPrices[btn.id]) {
-                    autoClickerStatus[btn.id] = 1;
-                    score -= autoClickerPrices[btn.id];
+                if (localStorage.score >= autoClickerPrices[btn.id]) {
+                    localStorage.score -= autoClickerPrices[btn.id];
                     //document.getElementById("score").innerHTML = localStorage.score;
                     team[btn.id] += 1; 
                     autoclickerFunction(btn.id);
@@ -75,26 +72,49 @@
                 }
             }
         ),
-    ); */
+    );
 
     //restart button click event
-/*      document.getElementById("restart").addEventListener("click",() => {
+     document.getElementById("startAgain").addEventListener("click",() => {
         //set score back to 0
         var score = localStorage.setItem("score", 0); 
-        document.getElementById("score").innerHTML = score;
+/*         document.getElementById("score").innerHTML = score; */
 
         //set statuses back to false
         for (var item in multiplierStatus) {
             multiplierStatus[item] = 0;
         }
-        for (var item in autoClickerStatus) {
-            multiplierStatus[item] = 0;
-        }
-    });    */
+    });   
 
     function autoclickerFunction(timer) {
+        switch(timer) {
+            case "0":
+                setInterval(() => {
+                    localStorage.score = parseInt(localStorage.score) + 2;
+                    console.log(localStorage.score)
+/*                     document.getElementById("score").innerHTML; */
+                }, 2000)
+                team[timer] += 1;
+                break;
+            
+            case "1":
+                setInterval(() => {
+                    localStorage.score = parseInt(localStorage.score) + 4;
+                    console.log(localStorage.score)
+    /*                 document.getElementById("score").innerHTML; */
+                    }, 4000)
+                team[timer] += 1;
+                break;
 
-        
+            case "2":
+                setInterval(() => {
+                    localStorage.score = parseInt(localStorage.score) + 6;
+                    console.log(localStorage.score)
+    /*                 document.getElementById("score").innerHTML; */
+                    }, 6000)
+                team[timer] += 1;
+                break;
+        }
     }
 
 })();
