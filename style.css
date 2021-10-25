@@ -2,7 +2,12 @@ body {
 margin: 0;
 }
 
-img {   
-    width: 50%;
-    height: 50%;
+
+.click {  
+    margin: 0;
+    padding: 0;  
+    width:100%;
+    max-height: fit-content;
+    border: none;
+    background:transparent;
 }
