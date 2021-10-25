@@ -76,11 +76,24 @@
         }
     }     
 
-    //cookie click event
+    //cookie click events
+    //score up
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
         document.getElementById("score").innerHTML = localStorage.score;
         console.log(localStorage.score);
+    });
+    
+    //winky cookie + size increase on mousedown
+    document.getElementById("cookie").addEventListener("mousedown",() => {
+        document.getElementById("cookie").src = "./images/cookie1.png";
+        document.getElementById("cookie").style.transform = "scale(1.2)";
+    });
+
+    //normal cookie + size decrease on mouseup
+    document.getElementById("cookie").addEventListener("mouseup",() => {
+        document.getElementById("cookie").src = "./images/cookie.png";
+        document.getElementById("cookie").style.transform = "scale(1.1)";
     });
 
     //multiplier button click event
@@ -137,26 +150,5 @@
         window.location.reload();
     });   
 
-/* 
-    let buttonCookie = document.getElementsByClassName("click")[0];
-    // let tranform = false;
-    buttonCookie.addEventListener("click", () => {
-        buttonCookie.style.transform = "scale(1.1)";
-    setTimeout(cookie,10);
-       // buttonCookie.style.transform = "scale(1.0)";
-       // buttonCookie.style.transition = "scale(1.0) 1s";
-    //    transform = true;
-    })
-    function cookie () {
-        buttonCookie.addEventListener("focusout", ()=>{
-            buttonCookie.style.transform = "scale(1.0)";
-        });
-    } */
-   
-    // buttonCookie.addEventListener("change",()=> {
-    //     if(tranform === true){
-    //         buttonCookie.style.transition = "scale(1.0) 1s";
-    //         tranform = false;
-    //     }
-    // })
+
 })();
