@@ -68,3 +68,10 @@ background-repeat: no-repeat;
             height: 500px;
         } 
      }
+
+.links, :hover {    
+    text-decoration: none;
+    color: black !important;
+}
+
+
