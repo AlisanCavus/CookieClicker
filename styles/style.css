@@ -45,6 +45,7 @@ background: linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219)); */
             height: 300px;
         } 
      }
+     /* large devices */
      @media (min-width: 992px) {
         #cookie {
             width: 500px;
