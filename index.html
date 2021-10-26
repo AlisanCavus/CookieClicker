@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Cookie Heaven. This game is originated by Cookie Clicker. You can click on the cookie to get coockies and there is more options to gain more cookies. Good luck and have fun.">
     <link rel="stylesheet" href="./styles/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/all.css">
     <link rel="stylesheet" href="./styles/style.css">
@@ -23,6 +24,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12 col-md-4  order-2 order-md-1 mt-md-4 mb-1">
+                    <!-- fix this by adding button css-->
                     <button class="click" id="mute">Mute</button>
                 </div>
                 <div class="col-12 col-md-4  order-md-2"> </div>
@@ -38,83 +40,99 @@
 
     <section class="cookieMain">
         <div class="container-fluid">
-            <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-12 offset-lg-0">
-                <div class="row">
-                    <div class="col-12  col-md-12 offset-lg-0 col-lg-4  order-md-2 order-lg-1 align-self-center">
-                        <div class="cookieCounter text-center">
-                            <p>Cookie-o-meter !</p>
-                            <p id="score"></p>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="col-10 offset-1 col-md-8 offset-md-2 offset-lg-2 col-lg-10">
+                        <div class="row">
+                            <div class="col-12 col-md-12 order-md-1 col-lg-7 order-lg-2">
+                                <div class="row">
+                                    <button class="click">
+                                        <img src="./images/cookie.png" alt="cookie" id="cookie" class="cookie" width="250px"
+                                            height="250px">
+                                    </button>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12  col-md-12  order-md-2 order-lg-3 align-self-center">
+                                        <div class="cookieCounter text-center">
+                                            <p>Cookie-o-meter !</p>
+                                            <p id="score"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <div class=" offset-2 col-10 offset-md-0 col-md-12  order-md-3 col-lg-5 order-lg-1  align-self-center mb-2 mb-md-5"
+                                id="team">
+                                <div class="row">
+                                    <div class="col-12 col-md-4 col-lg-12" id="alisan">
+        
+                                    </div>
+                                    <div class="col-12  col-md-4 col-lg-12" id="daniel">
+        
+                                    </div>
+                                    <div class="col-12 col-md-4 col-lg-12" id="shivani">
+        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-12 order-md-1 order-lg-2 col-lg-3 offset-lg-0">
-                        <button class="click">
-                            <img src="./images/cookie.png" alt="cookie" id="cookie" class="cookie" width="250px"
-                                height="250px">
-                        </button>
-                    </div>
-                    <div class=" offset-2 col-10 offset-md-0 col-md-12  order-md-3 offset-lg-1 col-lg-4 align-self-center mb-2 mb-md-5"
-                        id="team">
-                        <div class="row">
-                            <div class="col-12 col-md-4" id="alisan">
-
-                            </div>
-                            <div class="col-12  col-md-4" id="daniel">
-
-                            </div>
-                            <div class="col-12 col-md-4" id="shivani">
-
+                </div>
+                <!-- here are buttons -->
+                <div class="col-12 col-lg-4">
+                    <div class="container-fluid">
+                        <div class="col-10 offset-1 col-md-12 offset-md-0">
+                            <div class="row">
+                                <div class=" offset-1 col-9 offset-2 col-md-12 offset-md-0 order-2 order-lg-2 mb-2 col-lg-8 offset-lg-2 justify-content-evenly">
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                            <button type="button" id="x2"
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 multiplier butbut">multiplier
+                                                x2 (30 cookies)</button>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                            <button type="button" id="x3"
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 multiplier butbut">multiplier
+                                                x3 (50 cookies)</button>
+                                        </div>
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                            <button type="button" id="x4"
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 multiplier butbut">multiplier
+                                                x4 (80 cookies)</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 order-1 order-lg-3 mb-2  d-flex justify-content-evenly">
+                                    <div class="row">
+                                        <div class="col-4 mb-2">
+                                            <button type="button" id="0"
+                                                class="btn btn-primary  px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Alisan</button>
+                                        </div>
+                                        <div class="col-4 mb-2">
+                                            <button type="button" id="1"
+                                                class="btn btn-primary  px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Daniel</button>
+                                        </div>
+                                        <div class="col-4 mb-2">
+                                            <button type="button" id="2"
+                                                class="btn btn-primary px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Shivani</button>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                                <div class="col-4 offset-4 order-3  order-lg-1 mb-2 mt-lg-5">
+                                     <!-- fix this by adding border and fix for sm and medium screen-->
+                                    <button class="click px-2  py-1  butbut autoclicker" id="bonus">Bonus</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
+          
         </div>
 
-        <div class="container-fluid">
-            <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-8 offset-lg-2">
-                <div class="row">
-                    <div
-                        class=" offset-1 col-9 offset-2  col-md-12 offset-md-0 offset-lg-2 col-lg-4  order-2 order-lg-1 mb-2">
-                        <div class="row">
-                            <div class="col-12 col-md-4  col-lg-12 mb-2">
-                                <button type="button" id="x2"
-                                    class="btn btn-primary  me-2 px-2 px-md-3 px-lg-4 py-1 py-md-3 multiplier butbut">multiplier
-                                    x2 (30 cookies)</button>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-12 mb-2">
-                                <button type="button" id="x3"
-                                    class="btn btn-primary  me-2 px-2 px-md-3 px-lg-4 py-1 py-md-3 multiplier butbut">multiplier
-                                    x3 (50 cookies)</button>
-                            </div>
-                            <div class="col-12 col-md-4 col-lg-12 mb-2">
-                                <button type="button" id="x4"
-                                    class="btn btn-primary  me-2 px-2 px-md-3 px-lg-4 py-1 py-md-3 multiplier butbut">multiplier
-                                    x4 (80 cookies)</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12  col-lg-2 order-1 order-lg-2 mb-2 d-flex justify-content-evenly">
-                        <div class="row">
-                            <div class="col-4  col-lg-12 mb-2">
-                                <button type="button" id="0"
-                                    class="btn btn-primary  px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Alisan</button>
-                            </div>
-                            <div class="col-4   col-lg-12 mb-2">
-                                <button type="button" id="1"
-                                    class="btn btn-primary  px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Daniel</button>
-                            </div>
-                            <div class="col-4  col-lg-12 mb-2">
-                                <button type="button" id="2"
-                                    class="btn btn-primary px-2 px-md-4 py-1 py-md-2 butbut autoclicker">Shivani</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 offset-md-3  order-3  mb-2">
-                        <button class="click butbut" id="bonus">Bonus</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
 
     </section>
 
@@ -164,8 +182,13 @@
                     </a>
                 </div>
             </div>
-            <div class="row p-0 justify-content-center">
-                
+            <!-- <div class="row p-0 justify-content-center">
+                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
+                    <a href="https://github.com/AlisanCavus/CookieClicker" class="links">
+                        <img src="./images/cookie1.png" alt="githubLink" class="portrait">
+                    </a>
+                </div>
+            </div> -->
             <div class="row p-0 mt-3 justify-content-center">
                 <div class="col-12  text-center ">
                     <p>Cookie Heaven &copy;Shivani&Daniel&Alisan</p>
@@ -176,4 +199,6 @@
     <script src="./js/script.js"></script>
 </body>
 
-</html>
+ </html>
+
+
