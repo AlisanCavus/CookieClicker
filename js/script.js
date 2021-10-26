@@ -9,6 +9,15 @@
     //create an array to keep the intervals. This way we can loop through the array to clear all intervals on restart
     const interval = [];
 
+    //set click sound effect
+    var crunch = new Audio("../audio/crunch1.wav")
+    //set mute event
+    var mute = false;
+    document.getElementById("mute").addEventListener("click",() => {
+        mute = mute ? false : true;
+    }
+)
+
     //set number of autoclickers, check if there is a 'autoclicker' variable already in local storage, creates one if not
     //localStorage can't hold objects, so we need to use JSON.stringify to save them, and parse them back when we need to use them
     var autoclicker = {
@@ -93,6 +102,7 @@
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
         document.getElementById("score").innerHTML = localStorage.score;
+        mute ? true : crunch.play();
         console.log(localStorage.score); //test log, to be removed
     });
     
@@ -100,24 +110,28 @@
     document.getElementById("cookie").addEventListener("mousedown",() => {
         document.getElementById("cookie").src = "./images/cookie1.png";
         document.getElementById("cookie").style.transform = "scale(1.1)";
+        document.getElementById("score").style.transform = "scale(1.5)"
     });
 
     //winky cookie image + size increase on touchstart for mobile
     document.getElementById("cookie").addEventListener("touchstart",() => {
         document.getElementById("cookie").src = "./images/cookie1.png";
         document.getElementById("cookie").style.transform = "scale(1.1)";
+        document.getElementById("score").style.transform = "scale(1.5)"
     });
 
     //normal cookie image + size decrease on mouseup
     document.getElementById("cookie").addEventListener("mouseup",() => {
         document.getElementById("cookie").src = "./images/cookie.png";
         document.getElementById("cookie").style.transform = "scale(1.0)";
+        document.getElementById("score").style.transform = "scale(1.0)"
     });
 
     //normal cookie image + size decrease on touchend for mobile
     document.getElementById("cookie").addEventListener("touchend",() => {
         document.getElementById("cookie").src = "./images/cookie.png";
         document.getElementById("cookie").style.transform = "scale(1.0)";
+        document.getElementById("score").style.transform = "scale(1.0)"
     });
 
     //multiplier button click event

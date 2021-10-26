@@ -9,8 +9,10 @@ padding: 0;
 width: 100%;
 height: 100%;
 
-background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
-background: linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
+background-image: url("../images/bgClouds.webp");
+
+/* background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
+background: linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219)); */
 
 /* background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(21, 151, 229));
 background: linear-gradient(180deg, rgb(162, 210, 255), rgb(21, 151, 229)); */
