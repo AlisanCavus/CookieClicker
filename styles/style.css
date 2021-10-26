@@ -74,7 +74,9 @@ background-repeat: no-repeat;
     
 }
 
-
+#startAgain {
+    width: 50px;
+}
 
 .cookieRain {
     height: 0;
@@ -96,6 +98,15 @@ background-repeat: no-repeat;
     }
 }
 
+.deskFooter {
+    display: none;
+}
+
+.portrait {
+    border-radius: 50%;
+    max-width: 50%;
+}
+
 /*MEDIA QUERIES*/
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -103,6 +114,14 @@ background-repeat: no-repeat;
             width: 300px;
             height: 300px;
         } 
+
+        .deskFooter {
+            display: inherit;
+        }
+
+        .mobFooter {
+            display: none;
+        }
      }
      @media (min-width: 992px) {
         #cookie {
