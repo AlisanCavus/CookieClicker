@@ -190,27 +190,28 @@
     }); 
     
     //cookie rain
-    const flake = document.querySelector(".flake");
+    const cookieDrop = document.querySelector(".flake");
     const container = document.querySelector(".cookieRain");
 
-    function createFlake() {
+    function createCookie() {
         // cloning the flake node
-        const clone = flake.cloneNode(true);
+        const clone = cookieDrop.cloneNode(true);
 
         // creating left padding
         clone.style.paddingLeft = Math.random() * 20 + "%";
 
         // animation duration between 3-5
-        clone.style.animationDuration = Math.random() * 7 + 4 + "s";
+        clone.style.animationDuration = Math.random() * 7 + 6 + "s";
         clone.style.opacity = Math.random() * 1;
-        container.append(clone); // adding clone flake to container
+        
+        //adding cloned cookie to container
+        container.append(clone);
     }
 
-    // to create more flakes decrease 100
-    const s = setInterval(createFlake, 50);
-
+    //interval for cookie creation
+    const s = setInterval(createCookie, 50);
 
     setTimeout(() => {
-    clearInterval(s);
-    }, 3000); // flake creation stops after 3000 milliseconds or 3s
+        clearInterval(s);
+    }, 3000); // flake creation stops after 3s
 })();
