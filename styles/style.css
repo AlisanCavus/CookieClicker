@@ -57,6 +57,27 @@ background-repeat: no-repeat;
     border: 1px solid ;
 }
 
+.cookieRain {
+    height: 0;
+}
+.flake {
+    max-width: 5%;
+    animation: fall 7s linear forwards infinite;
+    animation-delay: 1s;
+  }
+  
+/* animating snowflake in Y-axis  */
+  
+@keyframes fall {
+from {
+    transform: translateY(-10vh);
+}
+to {
+    transform: translateY(100vh);
+}
+}
+
+/*MEDIA QUERIES*/
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
         #cookie {
