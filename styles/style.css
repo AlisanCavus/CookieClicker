@@ -11,7 +11,8 @@ height: 100%;
 
 background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
 background: linear-gradient(180deg, rgb(162, 210, 255), rgb(105, 218, 219));
-
+background-size: cover;
+background-repeat: no-repeat;
 /* background: -webkit-linear-gradient(180deg, rgb(162, 210, 255), rgb(21, 151, 229));
 background: linear-gradient(180deg, rgb(162, 210, 255), rgb(21, 151, 229)); */
 
@@ -29,12 +30,9 @@ background: radial-gradient(rgb(95, 147, 154), rgb(58, 99, 81)); */
 
 /* background: -webkit-linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23));
 background: linear-gradient(-180deg, rgb(215, 234, 40), rgb(17, 119, 23)); */
-background-size: cover;
-background-repeat: no-repeat;
+
 }
-.heading {
-    text-align: center;
-}
+
 .click {  
     margin: 0;
     padding: 0;
