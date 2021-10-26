@@ -10,7 +10,7 @@
     const interval = [];
 
     //set click sound effect
-    var crunch = new Audio("../audio/crunch1.wav")
+    var crunch = new Audio("./audio/crunch1.wav")
     //set mute event
     var mute = false;
     document.getElementById("mute").addEventListener("click",() => {
