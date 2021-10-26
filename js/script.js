@@ -53,13 +53,14 @@
         "x4": 10
     }
 
+/////change this to var and add it to localStorage    
     const autoClickerPrices = {
         0 : 3,
         1 : 7,
         2 : 12
     }
 
-    //set multiplier status. 1 of each multiplier can be bought
+    //set number of multipliers in play
     var multiplierStatus = {
         "x2": 0,
         "x3": 0,
@@ -137,11 +138,10 @@
     //multiplier button click event
     document.querySelectorAll("button.multiplier").forEach(btn =>
         btn.addEventListener("click", () => {
-            if (multiplierStatus[btn.id] === 0 && localStorage.score >= multiplierPrices[btn.id]) {
-                multiplierStatus[btn.id] = 1;
+            if (localStorage.score >= (multiplierPrices[btn.id] + (multiplierStatus[btn.id] * 100))) {
+                multiplierStatus[btn.id] += 1;
                 localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus));
-                localStorage.mult = parseInt(localStorage.mult) + 1; //if we chose this option, buttons must unlock in order
-                //localStorage.mult = parseInt(localStorage.mult) + parseInt(btn.id.charAt(1)) - 1;
+                localStorage.mult = parseInt(localStorage.mult) * parseInt(btn.id.charAt(1));
                 localStorage.score -= multiplierPrices[btn.id];
                 document.getElementById("score").innerHTML = localStorage.score;                   
                 console.log(localStorage.score); //test log, to be removed
