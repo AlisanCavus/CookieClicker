@@ -12,6 +12,9 @@ background-size: cover;
 background-repeat: no-repeat;
 }
 
+.heading {
+    text-align: center;
+}
 .click {  
     margin: 0;
     padding: 0;
@@ -24,13 +27,39 @@ background-repeat: no-repeat;
 .bgcolnavbut { 
     background: transparent !important;
     border: none;
-    
 }
 
 .butbut{ 
-    background: transparent !important;
-    color: #38A3A5;
-    border: 1px solid ;
+    background: rgba(136,221,240, 1) !important;
+    border-radius: 30px;
+    border-color:#51a1fd !important ;
+    color: black !important;
+}
+
+.butbut:hover  { 
+    background-color: rgba(81,161,253, 1)!important;
+    border-radius:  30px;
+    border-color: white !important ;
+    box-shadow: 0px 10px 15px rgba(16, 69, 82, 1);
+    color: black!important;
+}
+
+.butbut:visited {    
+    background-color: rgba(81,161,253, 0.3)!important;
+    border-radius:  30px;
+    border-color:  rgba(81,161,253, 0.3)!important;
+    box-shadow: 0px 10px 15px rgba(16, 69, 82, 0.3)!important;
+    color: black!important;
+    transform: none !important;
+}
+
+.butbut:focus {    
+    background-color: rgba(81,161,253, 0.3)!important;
+    border-radius:  30px;
+    border-color: rgba(81,161,253, 0.3)!important;
+    box-shadow: 0px 10px 15px rgba(16, 69, 82, 0.3)!important;
+    color: black!important;
+    transform: none !;
 }
 
 .cookieRain {
