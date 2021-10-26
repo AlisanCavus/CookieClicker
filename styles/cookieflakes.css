@@ -1,0 +1,73 @@
+.cookieflakes, .cookieflakes:before, .cookieflakes:after {
+
+	position:absolute;
+    z-index: -1;
+    height: 100%;
+    overflow: auto;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-image: url(/images/cookie.png);
+	background-size: 200px 200px;
+    opacity: 10%;
+	animation: cookieflakes 5s linear infinite;
+}
+#cookieflakes {
+	background: none;
+	z-index: -2;
+	background-image: url(/images/cookie.png);
+	height: 100%;
+	left: 0;
+	position: relative;
+	top: 0;
+	width: 100%;
+	-webkit-animation: cookieflakes 10s linear infinite;
+	-moz-animation: cookieflakes 10s linear infinite;
+	-ms-animation: cookieflakes 10s linear infinite;
+	animation: cookieflakes 10s linear infinite;
+}
+@keyframes cookieflakes {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 10% {
+background-position: 100px 100px, 100px 200px, -100px 110px;
+}
+ 100% {
+background-position: 100px 1000px, 200px 400px, -100px 300px;
+}
+}
+@-moz-keyframes cookieflakes {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 10% {
+background-position: 100px 100px, 100px 200px, -100px 110px;
+}
+ 100% {
+background-position: 400px 1000px, 200px 400px, 100px 300px;
+}
+}
+@-webkit-keyframes cookieflakes {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 10% {
+background-position: 100px 100px, 100px 200px, -100px 110px;
+}
+ 100% {
+background-position: 100px 1000px, 200px 400px, -100px 300px;
+}
+}
+@-ms-keyframes cookieflakes {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 10% {
+background-position: 100px 1000px, 200px 400px, -100px 300px;
+}
+ 100% {
+background-position: 100px 1000px, 200px 400px, -100px 300px;
+}
+}
