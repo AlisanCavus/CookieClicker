@@ -187,5 +187,31 @@
 
         //refresh page to trigger script from the beginning
         window.location.reload();
-    });   
+    }); 
+    
+    //cookie rain
+    const cookieDrop = document.querySelector(".flake");
+    const container = document.querySelector(".cookieRain");
+
+    function createCookie() {
+        // cloning the flake node
+        const clone = cookieDrop.cloneNode(true);
+
+        // creating left padding
+        clone.style.paddingLeft = Math.random() * 20 + "%";
+
+        // animation duration between 3-5
+        clone.style.animationDuration = Math.random() * 7 + 6 + "s";
+        clone.style.opacity = Math.random() * 1;
+        
+        //adding cloned cookie to container
+        container.append(clone);
+    }
+
+    //interval for cookie creation
+    const s = setInterval(createCookie, 50);
+
+    setTimeout(() => {
+        clearInterval(s);
+    }, 3000); // flake creation stops after 3s
 })();
