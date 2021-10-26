@@ -69,4 +69,9 @@ background-repeat: no-repeat;
         } 
      }
 
+.links, :hover {    
+    text-decoration: none;
+    color: black !important;
+}
+
 
