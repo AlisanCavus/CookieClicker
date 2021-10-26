@@ -6,24 +6,45 @@
     //setting the multiplier factor. Default is one, increases when player buys an upgrade
     localStorage.hasOwnProperty("mult") ? true : localStorage.setItem("mult", 1);
 
-    //set number of autoclickers, check if there is a 'team' variable already in local storage, creates one if not
+    //create an array to keep the intervals. This way we can loop through the array to clear all intervals on restart
+    const interval = [];
+
+    //set click sound effect
+    var crunch = new Audio("./audio/crunch1.wav")
+    //set mute event
+    var mute = false;
+    document.getElementById("mute").addEventListener("click",() => {
+        mute = mute ? false : true;
+    }
+)
+
+    //set number of autoclickers, check if there is a 'autoclicker' variable already in local storage, creates one if not
     //localStorage can't hold objects, so we need to use JSON.stringify to save them, and parse them back when we need to use them
-    var team = {
+    var autoclicker = {
         0: 0,
         1: 0,
         2: 0
     }
 
-    localStorage.hasOwnProperty("team") ? team = JSON.parse(localStorage.getItem("team")) : localStorage.setItem("team", JSON.stringify(team));
-    //var parseTeam = JSON.parse(localStorage.getItem("team")); //not needed atm
+    localStorage.hasOwnProperty("autoclicker") ? autoclicker = JSON.parse(localStorage.getItem("autoclicker")) : localStorage.setItem("autoclicker", JSON.stringify(autoclicker));
+
+    //autoclicker restart function. Iterates through the autoclicker object and creates setIntervals if needed.
+    function autoclickerRestart() {
+        for (key in autoclicker) {
+            if (autoclicker[key] > 0) {
+                for (i = 0; i < autoclicker[key]; i++) {
+                    autoclickerFunction(key);
+                }
+            }
+        }
+    }
+
+    autoclickerRestart();
 
     //display autoclickers
-    document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${team[0]}`;
-    document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${team[1]}`;
-    document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${team[2]}`;
-
-    //create an array to keep the intervals. This way we can loop through the array to clear all intervals on restart
-    const interval = [];
+    document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${autoclicker[0]}`;
+    document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${autoclicker[1]}`;
+    document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${autoclicker[2]}`;
 
     //multiplier and autoclicker prices
     const multiplierPrices = {
@@ -81,6 +102,7 @@
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
         document.getElementById("score").innerHTML = localStorage.score;
+        mute ? true : crunch.play();
         console.log(localStorage.score); //test log, to be removed
     });
     
@@ -88,12 +110,28 @@
     document.getElementById("cookie").addEventListener("mousedown",() => {
         document.getElementById("cookie").src = "./images/cookie1.png";
         document.getElementById("cookie").style.transform = "scale(1.1)";
+        document.getElementById("score").style.transform = "scale(1.5)"
+    });
+
+    //winky cookie image + size increase on touchstart for mobile
+    document.getElementById("cookie").addEventListener("touchstart",() => {
+        document.getElementById("cookie").src = "./images/cookie1.png";
+        document.getElementById("cookie").style.transform = "scale(1.1)";
+        document.getElementById("score").style.transform = "scale(1.5)"
     });
 
     //normal cookie image + size decrease on mouseup
     document.getElementById("cookie").addEventListener("mouseup",() => {
         document.getElementById("cookie").src = "./images/cookie.png";
         document.getElementById("cookie").style.transform = "scale(1.0)";
+        document.getElementById("score").style.transform = "scale(1.0)"
+    });
+
+    //normal cookie image + size decrease on touchend for mobile
+    document.getElementById("cookie").addEventListener("touchend",() => {
+        document.getElementById("cookie").src = "./images/cookie.png";
+        document.getElementById("cookie").style.transform = "scale(1.0)";
+        document.getElementById("score").style.transform = "scale(1.0)"
     });
 
     //multiplier button click event
@@ -117,8 +155,8 @@
             if (localStorage.score >= autoClickerPrices[btn.id]) {
                 localStorage.score -= autoClickerPrices[btn.id];
                 document.getElementById("score").innerHTML = localStorage.score;
-                team[btn.id] += 1; 
-                localStorage.setItem("team", JSON.stringify(team))
+                autoclicker[btn.id] += 1; 
+                localStorage.setItem("autoclicker", JSON.stringify(autoclicker))
                 autoclickerFunction(btn.id);
                 console.log(localStorage.score); //test log, to be removed
             }
@@ -133,9 +171,10 @@
             console.log(localStorage.score) //test log, to be removed
         }, 2000 * (parseInt(timer) + 2)));
 
-        document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${team[0]}`;
-        document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${team[1]}`;
-        document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${team[2]}`;
+        localStorage.interval = interval;
+        document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${autoclicker[0]}`;
+        document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${autoclicker[1]}`;
+        document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${autoclicker[2]}`;
     };
 
     //restart button click event
