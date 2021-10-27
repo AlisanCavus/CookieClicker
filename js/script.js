@@ -214,4 +214,20 @@
     setTimeout(() => {
         clearInterval(s);
     }, 3000); // flake creation stops after 3s
+
+
+    document.getElementById("sound").addEventListener("click", () => { 
+        console.log ("test")
+        console.log ("test2" , mute)
+        if ( !mute ) {
+            document.getElementById("sound").src = "./images/volume-off.svg";
+            console.log ("test3" , mute)
+
+        }
+        else  {    
+            document.getElementById("sound").src = "./images/volume-high.svg"
+        }; 
+    });
 })();
+
+
