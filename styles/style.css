@@ -140,8 +140,15 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 }
 
 .stripe {   
+    border: solid 1px !important;
     border-color: white !important ;
     animation: gobaby 5s infinite;
+}
+
+.str {  
+    border: solid 1px !important;
+    border-color: white !important ;
+    background: rgba(136,221,240, 1) !important;
 }
 
 @keyframes gobaby {
