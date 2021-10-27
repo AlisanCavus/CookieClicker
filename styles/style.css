@@ -28,22 +28,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     background: transparent !important;
     border: none;
 }
-.butbut.dis{ 
-    background: rgba(136,221,240, 1) !important;
-    border-radius: 30px;
-    border-color:#51a1fd !important ;
-    color: black !important;
-    text-transform: uppercase;
-    min-width: 120px;
-}
- .butbut:disabled{ 
-    background: rgba(136,221,240, 1) !important;
-    border-radius: 30px;
-    border-color:#51a1fd !important ;
-    color: black !important;
-    text-transform: uppercase;
-    min-width: 150px;
-}
 
 .butbut, .butbut:hover  { 
     background-color: rgba(81,161,253, 1)!important;
@@ -51,11 +35,22 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     border-color: white !important ;
     box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
+    min-width: 150px;
+}
+
+ .butbut:disabled{ 
+    background: rgba(136,221,240, 1) !important;
+    border-radius: 30px;
+    border-color:#51a1fd !important ;
+    color: black !important;
+    text-transform: uppercase;
 }
 
 .butbut:hover  { 
     animation: anime 3s infinite;
 }
+
+
 
 @keyframes anime {
     0% { box-shadow: 0 0 10px 15px rgba(65, 192, 224, 1);}
@@ -154,7 +149,8 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 .str {  
     border: solid 1px !important;
     border-color: white !important ;
-    background: rgba(136,221,240, 1) !important;
+    background-color: rgba(81,161,253, 1)!important;
+    font-size: 110%;
 }
 
 @keyframes gobaby {
@@ -199,10 +195,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 
         #oMeter, #score {
             font-size: 200%;
-        }
-
-        .butbut{ 
-            min-width: 150px;
         }
 
         .titleMob {
