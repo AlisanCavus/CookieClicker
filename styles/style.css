@@ -151,3 +151,12 @@ background-repeat: no-repeat;
     height: 50px;
 }
 
+.strip1 {
+    background: rgba(136,221,240, 1) !important;
+    
+}
+
+.strip2 {   
+    background-color: rgba(81,161,253, 1)!important;
+    
+}
