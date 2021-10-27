@@ -5,6 +5,229 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Welcome to the Cookie Heaven. This game is originated by Cookie Clicker. You can click on the cookie to get coockies and there is more options to gain more cookies. Good luck and have fun.">
+    <link rel="stylesheet" href="./styles/bootstrap.min.css">
+    <link rel="stylesheet" href="./styles/all.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/icons/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Gorditas:wght@700&display=swap"
+        rel="stylesheet">
+    <title>Cookie Heaven</title>
+</head>
+
+<body>
+    <div class="container-fluid cookieRain">
+        <img src="./images/cookie.png" alt="cookie rain" class="flake">
+    </div>
+    <header class="head">
+        <h1 class="text-center fontstyle">Cookie Heaven</h1>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4 col-md-4 order-1 mt-md-4 mb-1">
+                    <button class="click" id="mute">
+                        <img src="./images/volume-high.svg" alt="volume-high" id="sound">
+                    </button>
+                </div>
+                <div class="col-4 col-md-4 order-2"> </div>
+                <div class="col-4 col-md-4 order-3 mt-md-4 mb-1 text-center">
+                    <img src="images/reloading.png" alt="start-again" id="startAgain">
+                </div>
+            </div>
+    </header>
+
+    <section class="cookieMain">
+        <div class="container-fluid">
+          <div class="row mb-md-5">
+              <!-- first column -->
+              <div class="col-12 order-3 col-lg-4 order-lg-1 mt-lg-5 ">
+                <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-8 offset-lg-2 mt-lg-5">
+                    <div class="row">
+                        <div class=" col-6 col-md-12 offset-md-0 order-1 order-lg-1 mb-2  offset-lg-0 col-lg-6 d-md-flex justify-content-evenly">
+                            <div class="row">
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="x2"
+                                        class="btn btn-primary  me-2  py-1  py-md-2 multiplier butbut">Double</button>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="x3"
+                                        class="btn btn-primary  me-2 py-1  py-md-2 multiplier butbut">Triple</button>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="x4"
+                                        class="btn btn-primary  me-2 py-1  py-md-2 multiplier butbut">Quadruple</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 offset-md-0 col-md-12  col-lg-6 offset-lg-0  order-2   order-lg-2 mb-2   d-md-flex justify-content-evenly">
+                            <div class="row">
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="0"
+                                        class="btn btn-primary px-lg-4 py-1 py-md-2  butbut autoclicker">Alisan</button>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="1"
+                                        class="btn btn-primary px-lg-4 py-1 py-md-2 butbut autoclicker">Daniel</button>
+                                </div>
+                                <div class="col-12 col-md-4 col-lg-12 mb-2">
+                                    <button type="button" id="2"
+                                        class="btn btn-primary px-md-4 py-1 py-md-2 butbut autoclicker">Shivani</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-6 offset-3 order-3 col-lg-6 offset-lg-3  mb-2 d-md-flex justify-content-evenly">
+                            <button class=" px-2  py-1 py-md-2 px-lg-5 btn btn-primary  butbut  autoclicker"
+                                id="bonus">Bonus</button>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <!-- second column -->
+              <div class="col-12 order-1 col-lg-4 order-lg-2">
+                <button class="click">
+                    <img src="./images/cookie.png" alt="cookie" id="cookie" class="cookie"
+                        width="200px" height="200px">
+                </button>
+              </div>
+              <!-- third column -->
+              <div class="col-12 order-4 col-lg-4 order-lg-3 mt-lg-5">
+                <div class="multiplier ">
+                    <table class="table table-striped text-center border">
+                        <thead>
+                            <tr class="strip1">
+                                <th scope="col">Options</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="strip2">
+                                <th scope="row">Alisan</th>
+                                <td id="alisan">Alisan</td>
+                                <td></td>
+                            </tr>
+                            <tr class="strip1">
+                                <th scope="row">Daniel</th>
+                                <td id="daniel">Daniel</td>
+                                <td></td>
+                            </tr>
+                            <tr class="strip2">
+                                <th scope="row">Shivani</th>
+                                <td id="shivani">Shivani</td>
+                                <td></td>
+                            </tr>
+                            <tr class="strip1">
+                                <th scope="row">Double</th>
+                                <td id="alisan"></td>
+                                <td></td>
+                            </tr>
+                            <tr class="strip2">
+                                <th scope="row">Triple</th>
+                                <td id="daniel"></td>
+                                <td></td>
+                            </tr>
+                            <tr class="strip1">
+                                <th scope="row">Quadruple</th>
+                                <td id="shivani"></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+              <!-- fourth table -->
+              <div class="col-12 order-2 col-lg-12 order-lg-4 mt-2 mb-2 mt-md-3 mb-md-3  mt-lg-4 mb-lg-4">
+                <div class="cookieCounter text-center">
+                    <p>Cookie-o-meter !</p>
+                    <p id="score"></p>
+                </div>
+              </div>
+          </div>
+    </section>
+
+    <footer class="deskFooter">
+        <div class="container-fluid test1">
+            <div class="row p-0 mt-3 justify-content-center">
+                <div class="col-12 col-md-3 order-md-3 col-lg-3 text-center">
+                    <a href="https://github.com/AlisanCavus/CookieClicker" class="links">
+                        <i class="fab fa-github"> The Repository </i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-3  col-lg-3 text-center ">
+                    <a href="https://github.com/Dan-DH" class="links">
+                        <i class="fab fa-github"> Daniel Diaz </i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-3 col-lg-3 text-center ">
+                    <a href="https://github.com/ShivaniKhatri96" class="links">
+                        <i class="fab fa-github"> Shivani Khatri</i>
+                    </a>
+                </div>
+                <div class="col-12 col-md-3 col-lg-3 text-center ">
+                    <a href="https://github.com/AlisanCavus" class="links">
+                        <i class="fab fa-github"> Alisan Cavus</i>
+                    </a>
+                </div>
+            </div>
+            <div class="row p-0 justify-content-center">
+                <div class="col-12  text-center ">
+                    <p>Cookie Heaven &copy;Shivani & Daniel & Alisan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="mobFooter">
+        <div class="container-fluid">
+            <div class="row p-0 mt-3 justify-content-center">
+                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
+                    <a href="https://github.com/Dan-DH" class="links" target="_blank">
+                        <img src="./images/daniIcon.jpeg" alt="githubLink" class="portrait">
+                    </a>
+                </div>
+                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
+                    <a href="https://github.com/ShivaniKhatri96" class="links" target="_blank">
+                        <img src="./images/shivaniIcon.jpeg" alt="githubLink" class="portrait">
+                    </a>
+                </div>
+                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
+                    <a href="https://github.com/AlisanCavus" class="links" target="_blank">
+                        <img src="./images/aliIcon.jpeg" alt="githubLink" class="portrait">
+                    </a>
+                </div>
+            </div>
+            <!-- <div class="row p-0 justify-content-center">
+                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
+                    <a href="https://github.com/AlisanCavus/CookieClicker" class="links">
+                        <img src="./images/cookie1.png" alt="githubLink" class="portrait">
+                    </a>
+                </div>
+            </div> -->
+            <div class="row p-0 mt-3 justify-content-center">
+                <div class="col-12  text-center ">
+                    <p>Cookie Heaven &copy;Shivani & Daniel & Alisan</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to the Cookie Heaven. This game is originated by Cookie Clicker. You can click on the cookie to get coockies and there is more options to gain more cookies. Good luck and have fun.">
     <link rel="stylesheet" href="./styles/bootstrap.min.css">
     <link rel="stylesheet" href="./styles/all.css">
@@ -52,7 +275,7 @@
                                     </button>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12  col-md-12  order-md-2 order-lg-3 mt-3 mt-lg-4 align-self-center">
+                                    <div class="col-12  col-md-12  order-md-2 order-lg-3 mt-3 mt-md-4 mt-lg-3 mb-lg-3 mt-lg-4 align-self-center">
                                         <div class="cookieCounter text-center">
                                             <p>Cookie-o-meter !</p>
                                             <p id="score"></p>
@@ -119,7 +342,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- here are buttons -->
                 <div class="col-12 col-lg-4">
                     <div class="container-fluid">
                         <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-8 offset-lg-2 mt-lg-5">
@@ -158,7 +380,7 @@
                                 </div>
                            
                                 <div class="col-4 offset-4 order-3 col-lg-6 offset-lg-3  mb-2">
-                                     <!-- fix this by adding border and fix for sm and medium screen-->
+    
                                     <button class=" px-2  py-1 py-lg-2 px-lg-5 btn btn-primary  butbut  autoclicker" id="bonus">Bonus</button>
                                 </div>
                             </div>
@@ -225,13 +447,7 @@
                     </a>
                 </div>
             </div>
-            <!-- <div class="row p-0 justify-content-center">
-                <div class="col-4 order-md-4 col-lg-3 text-center mt-md-2">
-                    <a href="https://github.com/AlisanCavus/CookieClicker" class="links">
-                        <img src="./images/cookie1.png" alt="githubLink" class="portrait">
-                    </a>
-                </div>
-            </div> -->
+          
             <div class="row p-0 mt-3 justify-content-center">
                 <div class="col-12  text-center ">
                     <p>Cookie Heaven &copy;Shivani & Daniel & Alisan</p>
@@ -242,6 +458,4 @@
     <script src="./js/script.js"></script>
 </body>
 
- </html>
-
-
+ </html> -->
