@@ -137,5 +137,9 @@ background-repeat: no-repeat;
     text-decoration: none;
     color: black !important;
 }
+.fontstyle {
+    font-family: 'Gorditas', cursive;
+}
+
 
 
