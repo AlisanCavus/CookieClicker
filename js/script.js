@@ -52,19 +52,37 @@
     document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
     document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
 
-    //multiplier and autoclicker prices
-    const multiplierPrices = {
+    //multiplier prices
+    var multiplierPrices = {
         "x2": 1,
         "x3": 5,
         "x4": 10
     }
 
-/////change this to var and add it to localStorage    
-    const autoClickerPrices = {
-        0 : 3,
+    //check if there is a 'multiplierPrices' variable already in local storage, create one if not
+    localStorage.hasOwnProperty("multiplierPrices") ? multiplierPrices = JSON.parse(localStorage.getItem("multiplierPrices")) : localStorage.setItem("multiplierPrices", JSON.stringify(multiplierPrices));
+    //var parseMultiplierPrices = JSON.parse(localStorage.getItem("multiplierPrices")); //not needed atm
+
+    //display the number of multipliers in the table
+    document.getElementById("m2p").innerHTML = multiplierPrices.x2;
+    document.getElementById("m3p").innerHTML = multiplierPrices.x3;
+    document.getElementById("m4p").innerHTML = multiplierPrices.x4;
+
+    //autoclicker prices
+    var autoClickerPrices = {
+        0 : 3, //test prices, to be changed
         1 : 7,
         2 : 12
     }
+
+    //check if there is a 'autoClickerPrices' variable already in local storage, create one if not
+    localStorage.hasOwnProperty("autoClickerPrices") ? autoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")) : localStorage.setItem("autoClickerPrices", JSON.stringify(autoClickerPrices)); 
+    //var parseAutoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")); //not needed atm
+
+    //display the number of multipliers in the table
+    document.getElementById("aPrice").innerHTML = autoClickerPrices[0];
+    document.getElementById("dPrice").innerHTML = autoClickerPrices[1];
+    document.getElementById("sPrice").innerHTML = autoClickerPrices[2];
 
     //set number of multipliers in play
     var multiplierStatus = {
@@ -76,6 +94,11 @@
     //check if there is a 'multiplierStatus' variable already in local storage, create one if not
     localStorage.hasOwnProperty("multiplierStatus") ? multiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")) : localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus)); 
     //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
+
+    //display the number of multipliers in the table
+    document.getElementById("m2").innerHTML = multiplierStatus.x2;
+    document.getElementById("m3").innerHTML = multiplierStatus.x3;
+    document.getElementById("m4").innerHTML = multiplierStatus.x4;
 
     //bonus timer
     var bonus = 1;
@@ -144,12 +167,17 @@
     //multiplier button click event
     document.querySelectorAll("button.multiplier").forEach(btn =>
         btn.addEventListener("click", () => {
-            if (localStorage.score >= (multiplierPrices[btn.id] + (multiplierStatus[btn.id] * 100))) {
+            if (localStorage.score >= multiplierPrices[btn.id]) {
+                console.log(btn.id)
+                localStorage.score -= multiplierPrices[btn.id];
                 multiplierStatus[btn.id] += 1;
+                multiplierPrices[btn.id] = multiplierStatus[btn.id] * 100 * parseInt(btn.id.charAt(1));
+                localStorage.setItem("multiplierPrices", JSON.stringify(multiplierPrices));
                 localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus));
                 localStorage.mult = parseInt(localStorage.mult) * parseInt(btn.id.charAt(1));
-                localStorage.score -= multiplierPrices[btn.id];
-                document.getElementById("score").innerHTML = localStorage.score;                   
+                document.getElementById("score").innerHTML = localStorage.score;  
+                document.getElementById("m" + parseInt(btn.id.charAt(1))).innerHTML = multiplierStatus[btn.id];
+                document.getElementById("m" + parseInt(btn.id.charAt(1)) + "p").innerHTML = multiplierPrices[btn.id];                    
                 console.log(localStorage.score); //test log, to be removed
             }
         }),
@@ -160,6 +188,8 @@
         btn.addEventListener("click", () => {
             if (localStorage.score >= autoClickerPrices[btn.id]) {
                 localStorage.score -= autoClickerPrices[btn.id];
+                autoClickerPrices[btn.id] = autoClickerPrices[btn.id] * 2;
+                localStorage.setItem("autoClickerPrices", JSON.stringify(autoClickerPrices));
                 document.getElementById("score").innerHTML = localStorage.score;
                 autoclicker[btn.id] += 1; 
                 localStorage.setItem("autoclicker", JSON.stringify(autoclicker))

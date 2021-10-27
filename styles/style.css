@@ -114,10 +114,14 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     text-decoration: none;
     color: black !important;
 }
+
 .fontstyle {
     font-family: 'Gorditas', cursive;
 }
 
+#oMeter, #score {
+    font-size: 200%;
+}
 
 #sound {   
     width: 50px;
