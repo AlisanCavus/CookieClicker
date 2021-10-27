@@ -100,7 +100,11 @@ background-repeat: no-repeat;
 }
 
 .deskFooter {
+    width: 100%;
     display: none;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
 }
 
 .portrait {
