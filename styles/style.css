@@ -98,6 +98,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 }
 
 .deskFooter {
+    min-height: min-content;
     width: 100%;
     display: none;
     margin-top: auto;
