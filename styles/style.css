@@ -152,3 +152,12 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         } 
     }
 
+.strip1 {
+    background: rgba(136,221,240, 1) !important;
+    
+}
+
+.strip2 {   
+    background-color: rgba(81,161,253, 1)!important;
+    
+}

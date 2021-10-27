@@ -52,7 +52,7 @@
                                     </button>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12  col-md-12  order-md-2 order-lg-3 align-self-center">
+                                    <div class="col-12  col-md-12  order-md-2 order-lg-3 mt-3 mt-lg-4 align-self-center">
                                         <div class="cookieCounter text-center">
                                             <p>Cookie-o-meter !</p>
                                             <p id="score"></p>
@@ -64,10 +64,48 @@
                             <div class=" offset-2 col-10 offset-md-0 col-md-12  order-md-3 col-lg-5 order-lg-1  align-self-center mb-2 mb-md-5"
                                 id="team">
                                 <div class="row">
-                                    <div class="col-12 col-md-4 col-lg-12" class="multiplier">
-                                        <table class="table">
-                                            
-                                        </table>
+                                    <div class="col-12 col-md-4 col-lg-12 align-self-center" class="multiplier">
+                                        <table class="table table-striped text-center border">
+                                            <thead>
+                                              <tr class="strip1">
+                                                <th scope="col">Options</th>
+                                                <th scope="col">Amount</th>
+                                                <th scope="col">Price</th>
+                                              </tr>
+                                            </thead>
+                                            <tbody>
+                                              <tr class="strip2">
+                                                <th scope="row">Alisan</th>
+                                                <td id="alisan">Alisan</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="strip1">
+                                                <th scope="row">Daniel</th>
+                                                <td id="daniel" >Daniel</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="strip2">
+                                                <th scope="row">Shivani</th>
+                                                <td id="shivani">Shivani</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="strip1">
+                                                <th scope="row">Double</th>
+                                                <td id="alisan"></td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="strip2">
+                                                <th scope="row">Triple</th>
+                                                <td id="daniel" ></td>
+                                                <td></td>
+                                              </tr>
+                                              <tr class="strip1">
+                                                <th scope="row">Quadruple</th>
+                                                <td id="shivani"></td>
+                                                <td></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
                                     </div>
                                     <div class="col-12 col-md-4 col-lg-12" id="alisan">
         
@@ -88,36 +126,33 @@
                     <div class="container-fluid">
                         <div class="col-10 offset-1 col-md-12 offset-md-0 col-lg-8 offset-lg-2 mt-lg-5">
                             <div class="row">
-                                <div class=" offset-1 col-9 offset-2 col-md-12 offset-md-0 order-1 order-lg-1 mb-2  offset-lg-0 col-lg-6  justify-content-evenly">
+                                <div class=" col-8 col-md-12 offset-md-0 order-1 order-lg-1 mb-2  offset-lg-0 col-lg-6">
                                     <div class="row">
                                         <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="x2"
-                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">multiplier
-                                                x2</button>
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">Double</button>
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="x3"
-                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">multiplier
-                                                x3</button>
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">Triple</button>
                                         </div>
                                         <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="x4"
-                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">multiplier
-                                                x4</button>
+                                                class="btn btn-primary  me-2 px-2 px-md-3 py-1 py-md-3 py-lg-2 multiplier butbut">Quadruple</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12  col-lg-6 offset-lg-0  order-2   order-lg-2 mb-2  d-flex justify-content-evenly">
+                                <div class="col-4 offset-md-0 col-md-12  col-lg-6 offset-lg-0  order-2   order-lg-2 mb-2   d-md-flex justify-content-evenly">
                                     <div class="row">
-                                        <div class="col-4 col-lg-12 mb-2">
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="0"
                                                 class="btn btn-primary  px-2 px-md-4 px-lg-4 py-1 py-md-2  butbut autoclicker">Alisan</button>
                                         </div>
-                                        <div class="col-4 col-lg-12 mb-2">
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="1"
                                                 class="btn btn-primary  px-2 px-md-4 px-lg-4 py-1 py-md-2 butbut autoclicker">Daniel</button>
                                         </div>
-                                        <div class="col-4 col-lg-12 mb-2">
+                                        <div class="col-12 col-md-4 col-lg-12 mb-2">
                                             <button type="button" id="2"
                                                 class="btn btn-primary px-2  px-lg-4 px-md-4 py-1 py-md-2 butbut autoclicker">Shivani</button>
                                         </div>
