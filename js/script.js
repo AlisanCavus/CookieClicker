@@ -1,5 +1,5 @@
 (() => {
-    //check if there is a 'score' variable already in local storage, creates one if not. Displays the score.
+   //check if there is a 'score' variable already in local storage, creates one if not. Displays the score.
     localStorage.hasOwnProperty("score") ? true : localStorage.setItem("score", 0); 
     document.getElementById("score").innerHTML = localStorage.score;
 
@@ -102,13 +102,18 @@
 
     //bonus timer
     var bonus = 1;
+    var bonusPrice = 1; //test value, to be changed
     var timerId; //setting a global scope variable that can be accesed by the onclick event and countdown()
     var bonusOn = false; //switch to prevent user from creating more than one setInterval bonus
     var bonusTimer = 5; //testing value, should be 30
     document.getElementById("bonus").addEventListener("click",() => {
-            if (!bonusOn) {
+            if (!bonusOn && localStorage.score >= bonusprice) {
                 bonusOn = true;
                 bonus = 2;
+                localStorage.score -= bonusPrice;
+                buttons();
+                multiplierStatus[btn.id] += 1;
+                document.getElementById("score").innerHTML = localStorage.score;  
                 timerId = setInterval(countdown, 1000);
             }
         }
@@ -127,10 +132,25 @@
         }
     }     
 
+    function buttons() {
+        document.querySelectorAll("button.multiplier").forEach(btn => {
+            localStorage.score >= multiplierPrices[btn.id] ? btn.disabled = false : btn.disabled = true;
+        });
+
+        document.querySelectorAll("button.autoclicker").forEach(btn => {
+            localStorage.score >= autoClickerPrices[btn.id] ? btn.disabled = false : btn.disabled = true;
+        });
+
+        document.getElementById("bonus").disabled = localStorage.score >= bonusPrice ? false : true;        
+    }
+
+    buttons(); 
+
     //cookie click events
     //score up
     document.getElementById("cookie").addEventListener("click",() => {
         localStorage.score = parseInt(localStorage.score) + (parseInt(localStorage.mult) * bonus);
+        buttons();
         document.getElementById("score").innerHTML = localStorage.score;
         mute ? true : crunch.play();
         console.log(localStorage.score); //test log, to be removed
@@ -168,8 +188,8 @@
     document.querySelectorAll("button.multiplier").forEach(btn =>
         btn.addEventListener("click", () => {
             if (localStorage.score >= multiplierPrices[btn.id]) {
-                console.log(btn.id)
                 localStorage.score -= multiplierPrices[btn.id];
+                buttons();
                 multiplierStatus[btn.id] += 1;
                 multiplierPrices[btn.id] = multiplierStatus[btn.id] * 100 * parseInt(btn.id.charAt(1));
                 localStorage.setItem("multiplierPrices", JSON.stringify(multiplierPrices));
@@ -188,6 +208,7 @@
         btn.addEventListener("click", () => {
             if (localStorage.score >= autoClickerPrices[btn.id]) {
                 localStorage.score -= autoClickerPrices[btn.id];
+                buttons();
                 autoClickerPrices[btn.id] = autoClickerPrices[btn.id] * 2;
                 localStorage.setItem("autoClickerPrices", JSON.stringify(autoClickerPrices));
                 document.getElementById("score").innerHTML = localStorage.score;
@@ -203,6 +224,7 @@
     function autoclickerFunction(timer) {
         interval.push(setInterval(() => {
             localStorage.score = parseInt(localStorage.score) + (parseInt(timer) + 3);
+            buttons();
             document.getElementById("score").innerHTML = localStorage.score;
             console.log(localStorage.score) //test log, to be removed
         }, 2000 * (parseInt(timer) + 2)));
@@ -230,8 +252,10 @@
     const container = document.querySelector(".cookieRain");
 
     function createCookie() {
-        // cloning the flake node
+        // cloning the flake node and giving it an id
         const clone = cookieDrop.cloneNode(true);
+        clone.className = "flake clone";
+        clone.id =  Math.random() * 1
 
         // creating left padding
         clone.style.paddingLeft = Math.random() * 20 + "%";
@@ -239,7 +263,7 @@
         // animation duration between 3-5
         clone.style.animationDuration = Math.random() * 7 + 6 + "s";
         clone.style.opacity = Math.random() * 1;
-        
+
         //adding cloned cookie to container
         container.append(clone);
     }

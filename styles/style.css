@@ -36,22 +36,25 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     text-transform: uppercase;
     min-width: 120px;
 }
-/* .butbut{ 
+ .butbut:disabled{ 
     background: rgba(136,221,240, 1) !important;
     border-radius: 30px;
     border-color:#51a1fd !important ;
     color: black !important;
     text-transform: uppercase;
     min-width: 150px;
-} */
+}
 
-.butbut.act, .butbut:hover  { 
+.butbut, .butbut:hover  { 
     background-color: rgba(81,161,253, 1)!important;
     border-radius:  30px;
     border-color: white !important ;
     box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    animation: anime 3s; /*removed infinite, to explain team -Dani*/
+}
+
+.butbut:hover  { 
+    animation: anime 3s infinite;
 }
 
 @keyframes anime {
@@ -61,25 +64,22 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     75% {box-shadow: 0 0 10px 15px rgba(126, 218, 241, 0.7);}
     100% { box-shadow:0 0 10px 15px rgba(65, 192, 224, 1);}
 }
-    
-.butbut:visited {    
-    background-color: rgba(81,161,253, 0.3)!important;
+   
+ .butbut:visited {    
+    background-color: rgba(81,161,253, 1)!important;
     border-radius:  30px;
-    border-color:  rgba(81,161,253, 0.3)!important;
-    box-shadow: 0px 10px 15px rgba(16, 69, 82, 0.3)!important;
+    border-color: white !important ;
+    box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    
-    
 }
 
 .butbut:focus {    
-    background-color: rgba(81,161,253, 0.3)!important;
+    background-color: rgba(81,161,253, 1)!important;
     border-radius:  30px;
-    border-color: rgba(81,161,253, 0.3)!important;
-    box-shadow: 0px 10px 15px rgba(16, 69, 82, 0.3)!important;
+    border-color: white !important ;
+    box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    
-}
+} 
 
 #startAgain {
     width: 50px;
