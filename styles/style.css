@@ -98,6 +98,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 }
 
 .deskFooter {
+    min-height: min-content;
     width: 100%;
     display: none;
     margin-top: auto;
@@ -113,14 +114,43 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     text-decoration: none;
     color: black !important;
 }
+
 .fontstyle {
     font-family: 'Gorditas', cursive;
 }
 
+#oMeter {
+    font-size: 175%;
+} 
+
+#score {
+    font-size: 200%;
+} 
 
 #sound {   
     width: 50px;
     height: 50px;
+}
+
+.stripe {   
+    border-color: white !important ;
+    animation: gobaby 5s infinite;
+}
+
+@keyframes gobaby {
+    0% { box-shadow: 0 0 10px 10px rgba(65, 192, 224, 1);}
+    25% {box-shadow: 0 0 10px 10px rgba(126, 218, 241, 0.7);}
+    50% {box-shadow: 0 0 10px 10px rgba(50, 200, 238, 0.5);}
+    75% {box-shadow: 0 0 10px 10px rgba(126, 218, 241, 0.7);}
+    100% { box-shadow:0 0 10px 10px rgba(65, 192, 224, 1);}
+}
+
+.stripe1 {
+    background: rgba(136,221,240, 1) !important;
+}
+
+.stripe2 {   
+    background-color: rgba(81,161,253, 1)!important;
 }
 
 /*MEDIA QUERIES*/
@@ -142,6 +172,10 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         .mobFooter {
             display: none;
         }
+
+        #oMeter, #score {
+            font-size: 200%;
+        }
      }
      /* large devices */
      @media (min-width: 992px) {
@@ -149,32 +183,11 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             width: 400px;
             height: 400px;
         } 
+
+        #oMeter, #score {
+            font-size: 300%;
+        }
     }
 
 
-.stripe {   
-    border-color: white !important ;
-    animation: gobaby 5s infinite;
-}
 
-@keyframes gobaby {
-    0% { box-shadow: 0 0 10px 20px rgba(65, 192, 224, 1);}
-    25% {box-shadow: 0 0 10px 20px rgba(126, 218, 241, 0.7);}
-    50% {box-shadow: 0 0 10px 20px rgba(50, 200, 238, 0.5);}
-    75% {box-shadow: 0 0 10px 20px rgba(126, 218, 241, 0.7);}
-    100% { box-shadow:0 0 10px 20px rgba(65, 192, 224, 1);}
-}
-
-.stripe1 {
-    background: rgba(136,221,240, 1) !important;
-    
-    
-    
-}
-
-.stripe2 {   
-    background-color: rgba(81,161,253, 1)!important;
-    
-    
-    
-}
