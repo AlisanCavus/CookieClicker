@@ -8,13 +8,12 @@ padding: 0;
 width: 100%;
 min-height: 100%;
 background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
-/* background-size: cover;
-background-repeat: no-repeat; */
 }
 
 .heading {
     text-align: center;
 }
+
 .click {  
     margin: 0;
     padding: 0;
@@ -35,8 +34,7 @@ background-repeat: no-repeat; */
     border-color:#51a1fd !important ;
     color: black !important;
     text-transform: uppercase;
-   
-
+    min-width: 150px;
 }
 
 .butbut:hover  { 
@@ -54,7 +52,7 @@ background-repeat: no-repeat; */
     50% {box-shadow: 0 0 10px 15px rgba(50, 200, 238, 0.5);}
     75% {box-shadow: 0 0 10px 15px rgba(126, 218, 241, 0.7);}
     100% { box-shadow:0 0 10px 15px rgba(65, 192, 224, 1);}
-    }
+}
     
 .butbut:visited {    
     background-color: rgba(81,161,253, 0.3)!important;
@@ -154,3 +152,12 @@ background-repeat: no-repeat; */
         } 
     }
 
+.strip1 {
+    background: rgba(136,221,240, 1) !important;
+    
+}
+
+.strip2 {   
+    background-color: rgba(81,161,253, 1)!important;
+    
+}

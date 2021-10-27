@@ -48,9 +48,9 @@
     autoclickerRestart();
 
     //display autoclickers
-    document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${autoclicker[0]}`;
-    document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${autoclicker[1]}`;
-    document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${autoclicker[2]}`;
+    document.getElementById("alisan").innerHTML = `${autoclicker[0]}`;
+    document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
+    document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
 
     //multiplier and autoclicker prices
     const multiplierPrices = {
@@ -178,9 +178,9 @@
         }, 2000 * (parseInt(timer) + 2)));
 
         localStorage.interval = interval;
-        document.getElementById("alisan").innerHTML = `Alisan(s) baking cookies: ${autoclicker[0]}`;
-        document.getElementById("daniel").innerHTML = `Daniel(s) baking cookies: ${autoclicker[1]}`;
-        document.getElementById("shivani").innerHTML = `Shivani(s) baking cookies: ${autoclicker[2]}`;
+        document.getElementById("alisan").innerHTML = `${autoclicker[0]}`;
+        document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
+        document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
     };
 
     //restart button click event
