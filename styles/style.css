@@ -27,7 +27,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     background: transparent !important;
     border: none;
 }
-.butbut{ 
+.butbut.dis{ 
     background: rgba(136,221,240, 1) !important;
     border-radius: 30px;
     border-color:#51a1fd !important ;
@@ -44,13 +44,13 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     min-width: 150px;
 } */
 
-.butbut:hover  { 
+.butbut.act, .butbut:hover  { 
     background-color: rgba(81,161,253, 1)!important;
     border-radius:  30px;
     border-color: white !important ;
-    box-shadow: 0px 10px 15px rgba(16, 69, 82, 1);
+    box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    animation: anime 2s infinite;
+    animation: anime 3s; /*removed infinite, to explain team -Dani*/
 }
 
 @keyframes anime {
@@ -167,6 +167,10 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     background-color: rgba(81,161,253, 1)!important;
 }
 
+.titleDesk {
+    display: none;
+}
+
 /*MEDIA QUERIES*/
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -190,8 +194,17 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         #oMeter, #score {
             font-size: 200%;
         }
+
         .butbut{ 
             min-width: 150px;
+        }
+
+        .titleMob {
+            display: none;
+        }
+
+        .titleDesk {
+            display: inherit;
         }
      }
      /* large devices */
