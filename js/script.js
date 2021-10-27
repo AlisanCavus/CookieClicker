@@ -24,6 +24,27 @@
         }; 
     });
 
+    //set display function
+    function display(type) {
+        if (type === "auto") {
+            document.getElementById("alisan").innerHTML = `${autoclicker[0]}`;
+            document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
+            document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
+        } else if (type === "autoPrices") {
+            document.getElementById("aPrice").innerHTML = autoClickerPrices[0];
+            document.getElementById("dPrice").innerHTML = autoClickerPrices[1];
+            document.getElementById("sPrice").innerHTML = autoClickerPrices[2];
+        } else if (type === "multi") {
+            document.getElementById("m2").innerHTML = multiplierStatus.x2;
+            document.getElementById("m3").innerHTML = multiplierStatus.x3;
+            document.getElementById("m4").innerHTML = multiplierStatus.x4;
+        } else if (type === "multiPrices") {
+            document.getElementById("m2p").innerHTML = multiplierPrices.x2;
+            document.getElementById("m3p").innerHTML = multiplierPrices.x3;
+            document.getElementById("m4p").innerHTML = multiplierPrices.x4;
+        }
+    }
+
     //set number of autoclickers, check if there is a 'autoclicker' variable already in local storage, creates one if not
     //localStorage can't hold objects, so we need to use JSON.stringify to save them, and parse them back when we need to use them
     var autoclicker = {
@@ -47,10 +68,16 @@
 
     autoclickerRestart();
 
-    //display autoclickers
-    document.getElementById("alisan").innerHTML = `${autoclicker[0]}`;
-    document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
-    document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
+    //autoclicker prices
+    var autoClickerPrices = {
+        0 : 3, //test prices, to be changed
+        1 : 7,
+        2 : 12
+    }
+
+    //check if there is a 'autoClickerPrices' variable already in local storage, create one if not
+    localStorage.hasOwnProperty("autoClickerPrices") ? autoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")) : localStorage.setItem("autoClickerPrices", JSON.stringify(autoClickerPrices)); 
+    //var parseAutoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")); //not needed atm
 
     //multiplier prices
     var multiplierPrices = {
@@ -63,27 +90,6 @@
     localStorage.hasOwnProperty("multiplierPrices") ? multiplierPrices = JSON.parse(localStorage.getItem("multiplierPrices")) : localStorage.setItem("multiplierPrices", JSON.stringify(multiplierPrices));
     //var parseMultiplierPrices = JSON.parse(localStorage.getItem("multiplierPrices")); //not needed atm
 
-    //display the number of multipliers in the table
-    document.getElementById("m2p").innerHTML = multiplierPrices.x2;
-    document.getElementById("m3p").innerHTML = multiplierPrices.x3;
-    document.getElementById("m4p").innerHTML = multiplierPrices.x4;
-
-    //autoclicker prices
-    var autoClickerPrices = {
-        0 : 3, //test prices, to be changed
-        1 : 7,
-        2 : 12
-    }
-
-    //check if there is a 'autoClickerPrices' variable already in local storage, create one if not
-    localStorage.hasOwnProperty("autoClickerPrices") ? autoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")) : localStorage.setItem("autoClickerPrices", JSON.stringify(autoClickerPrices)); 
-    //var parseAutoClickerPrices = JSON.parse(localStorage.getItem("autoClickerPrices")); //not needed atm
-
-    //display the number of multipliers in the table
-    document.getElementById("aPrice").innerHTML = autoClickerPrices[0];
-    document.getElementById("dPrice").innerHTML = autoClickerPrices[1];
-    document.getElementById("sPrice").innerHTML = autoClickerPrices[2];
-
     //set number of multipliers in play
     var multiplierStatus = {
         "x2": 0,
@@ -91,14 +97,18 @@
         "x4": 0
     }
 
+    //display the number of multipliers in the table
+
+
     //check if there is a 'multiplierStatus' variable already in local storage, create one if not
     localStorage.hasOwnProperty("multiplierStatus") ? multiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")) : localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus)); 
     //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
 
-    //display the number of multipliers in the table
-    document.getElementById("m2").innerHTML = multiplierStatus.x2;
-    document.getElementById("m3").innerHTML = multiplierStatus.x3;
-    document.getElementById("m4").innerHTML = multiplierStatus.x4;
+    //display multiplier and autoclicker numbers and prices
+    display("auto");
+    display("autoPrices");
+    display("multi");
+    display("multiPrices");
 
     //bonus timer
     var bonus = 1;
@@ -107,12 +117,11 @@
     var bonusOn = false; //switch to prevent user from creating more than one setInterval bonus
     var bonusTimer = 5; //testing value, should be 30
     document.getElementById("bonus").addEventListener("click",() => {
-            if (!bonusOn && localStorage.score >= bonusprice) {
+            if (!bonusOn && localStorage.score >= bonusPrice) {
                 bonusOn = true;
                 bonus = 2;
                 localStorage.score -= bonusPrice;
                 buttons();
-                multiplierStatus[btn.id] += 1;
                 document.getElementById("score").innerHTML = localStorage.score;  
                 timerId = setInterval(countdown, 1000);
             }
@@ -215,9 +224,7 @@
                 autoclicker[btn.id] += 1; 
                 localStorage.setItem("autoclicker", JSON.stringify(autoclicker))
                 autoclickerFunction(btn.id);
-                document.getElementById("aPrice").innerHTML = autoClickerPrices[0];
-                document.getElementById("dPrice").innerHTML = autoClickerPrices[1];
-                document.getElementById("sPrice").innerHTML = autoClickerPrices[2];    
+                display("autoPrices");  
                 console.log(localStorage.score); //test log, to be removed
             }
         }
@@ -233,9 +240,7 @@
         }, 2000 * (parseInt(timer) + 2)));
 
         localStorage.interval = interval;
-        document.getElementById("alisan").innerHTML = `${autoclicker[0]}`;
-        document.getElementById("daniel").innerHTML = `${autoclicker[1]}`;
-        document.getElementById("shivani").innerHTML = `${autoclicker[2]}`;
+        display("auto");
     };
 
     //restart button click event
