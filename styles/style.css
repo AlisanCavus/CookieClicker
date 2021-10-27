@@ -155,7 +155,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 
 .stripe {   
     border-color: white !important ;
-    width: 65%;
     animation: gobaby 5s infinite;
 }
 
