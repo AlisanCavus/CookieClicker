@@ -13,10 +13,16 @@
     var crunch = new Audio("./audio/crunch1.wav")
     //set mute event
     var mute = false;
-    document.getElementById("mute").addEventListener("click",() => {
-        mute = mute ? false : true;
-    }
-)
+    document.getElementById("sound").addEventListener("click", () => { 
+        if ( !mute ) {
+            document.getElementById("sound").src = "./images/volume-off.svg";
+            mute = true
+        }
+        else  {    
+            document.getElementById("sound").src = "./images/volume-high.svg"
+            mute = false;
+        }; 
+    });
 
     //set number of autoclickers, check if there is a 'autoclicker' variable already in local storage, creates one if not
     //localStorage can't hold objects, so we need to use JSON.stringify to save them, and parse them back when we need to use them
@@ -215,3 +221,5 @@
         clearInterval(s);
     }, 3000); // flake creation stops after 3s
 })();
+
+
