@@ -197,7 +197,7 @@
                 localStorage.mult = parseInt(localStorage.mult) * parseInt(btn.id.charAt(1));
                 document.getElementById("score").innerHTML = localStorage.score;  
                 document.getElementById("m" + parseInt(btn.id.charAt(1))).innerHTML = multiplierStatus[btn.id];
-                document.getElementById("m" + parseInt(btn.id.charAt(1)) + "p").innerHTML = multiplierPrices[btn.id];                    
+                document.getElementById("m" + parseInt(btn.id.charAt(1)) + "p").innerHTML = multiplierPrices[btn.id];
                 console.log(localStorage.score); //test log, to be removed
             }
         }),
@@ -215,6 +215,9 @@
                 autoclicker[btn.id] += 1; 
                 localStorage.setItem("autoclicker", JSON.stringify(autoclicker))
                 autoclickerFunction(btn.id);
+                document.getElementById("aPrice").innerHTML = autoClickerPrices[0];
+                document.getElementById("dPrice").innerHTML = autoClickerPrices[1];
+                document.getElementById("sPrice").innerHTML = autoClickerPrices[2];    
                 console.log(localStorage.score); //test log, to be removed
             }
         }
