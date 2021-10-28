@@ -35,7 +35,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     border-color: white !important ;
     box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    min-width: 150px;
+    min-width: 120px;
     text-transform: uppercase;
 }
 
@@ -121,13 +121,14 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 
 .fabfont {  
     font-family: 'Gorditas', cursive;
-    
 }
 
 .fontstyle {
     font-family: 'Gorditas', cursive;
 }
-
+/* #deskFooter {
+    position: absolute;
+} */
 #oMeter {
     font-size: 175%;
 } 
@@ -204,6 +205,9 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 
         .titleDesk {
             display: inherit;
+        }
+        .butbut, .butbut:hover  { 
+            min-width: 150px;
         }
      }
      /* large devices */
