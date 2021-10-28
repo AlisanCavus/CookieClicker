@@ -282,6 +282,16 @@
     setTimeout(() => {
         clearInterval(s);
     }, 3000); // flake creation stops after 3s
+
+    //pop-up window
+
+    document.getElementById("openForm").addEventListener("click",() => {
+        document.getElementById("infoPop").style.display = "block";
+    });
+
+    document.getElementById("closeForm").addEventListener("click",() => {
+        document.getElementById("infoPop").style.display = "none";
+    });  
 })();
 
 
