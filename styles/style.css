@@ -193,7 +193,6 @@ background: url("../images/bgCloudsMob.webp") no-repeat center center fixed;
         border: 2px solid rgba(126, 218, 241, 1);
         box-shadow: 3px 3px rgba(81,161,253, 1);
         text-align: center;
-        cursor: pointer;
     }
 
     #center {
