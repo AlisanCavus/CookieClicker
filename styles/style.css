@@ -260,6 +260,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             max-width: 350px;
             padding: 10px;
             overflow: auto;
+        }
 
           .butbut, .butbut:hover  { 
             min-width: 150px;
