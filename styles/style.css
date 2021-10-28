@@ -1,6 +1,7 @@
 html, body {
     height: 100%;   
     overflow-x: hidden; 
+    margin:0;
 }
 
 body {  
@@ -126,9 +127,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 .fontstyle {
     font-family: 'Gorditas', cursive;
 }
-/* #deskFooter {
-    position: absolute;
-} */
 #oMeter {
     font-size: 175%;
 } 
@@ -221,6 +219,17 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             font-size: 300%;
         }
     }
+    /* very very large screens */
+    @media (min-width: 1400px) {
+        .wrapper {
+            min-height: 100%;
+            margin-bottom: -80px;
+        }
+        .deskFooter {
+            height: 60px;
+        }
+    }
+    
 
 
 
