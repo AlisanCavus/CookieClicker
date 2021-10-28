@@ -35,7 +35,7 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     border-color: white !important ;
     box-shadow: 0px 10px 10px rgba(16, 69, 82, 1);
     color: black!important;
-    min-width: 150px;
+    min-width: 120px;
     text-transform: uppercase;
 }
 
@@ -121,13 +121,14 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
 
 .fabfont {  
     font-family: 'Gorditas', cursive;
-    
 }
 
 .fontstyle {
     font-family: 'Gorditas', cursive;
 }
-
+/* #deskFooter {
+    position: absolute;
+} */
 #oMeter {
     font-size: 175%;
 } 
@@ -243,10 +244,13 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             display: none;
         }
 
+        .titleFold {    
+            display: none;
+        }
+
         .titleDesk {
             display: inherit;
         }
-
         .popup {
             position: fixed;
             top: 50%;
@@ -256,6 +260,9 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             max-width: 350px;
             padding: 10px;
             overflow: auto;
+
+          .butbut, .butbut:hover  { 
+            min-width: 150px;
         }
      }
      /* large devices */
@@ -265,12 +272,43 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             height: 400px;
         } 
 
+        .titleFold {    
+            display: none;
+        }
+
         #oMeter, #score {
             font-size: 300%;
         }
     }
 
+    /* mobile except fold and iphone 5SE */
+    @media only screen and (min-width:321px ) and (max-width:767px) {  
+        .titleDesk {
+            display: none;
+        }
 
+        .titleMob { 
+            display: inherit;
+        }
+        
+        .titleFold {    
+            display: none;
+        }
+    }
+    /* mobile Fold and iphone 5SE */
+    @media (max-width:320px) {  
+        .titleDesk {    
+            display: none;
+        }
+
+        .titleMob {
+            display: none;
+        }
+
+        .titleFold {
+            display: inherit;
+        }
+    }
 
 
 
