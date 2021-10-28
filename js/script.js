@@ -167,28 +167,28 @@
     
     //winky cookie image + size increase on mousedown
     document.getElementById("cookie").addEventListener("mousedown",() => {
-        document.getElementById("cookie").src = "./images/cookie1.png";
+        document.getElementById("cookie").src = "./images/cookie1.webp";
         document.getElementById("cookie").style.transform = "scale(1.1)";
         document.getElementById("score").style.transform = "scale(1.5)"
     });
 
     //winky cookie image + size increase on touchstart for mobile
     document.getElementById("cookie").addEventListener("touchstart",() => {
-        document.getElementById("cookie").src = "./images/cookie1.png";
+        document.getElementById("cookie").src = "./images/cookie1.webp";
         document.getElementById("cookie").style.transform = "scale(1.1)";
         document.getElementById("score").style.transform = "scale(1.5)"
     });
 
     //normal cookie image + size decrease on mouseup
     document.getElementById("cookie").addEventListener("mouseup",() => {
-        document.getElementById("cookie").src = "./images/cookie.png";
+        document.getElementById("cookie").src = "./images/cookie.webp";
         document.getElementById("cookie").style.transform = "scale(1.0)";
         document.getElementById("score").style.transform = "scale(1.0)"
     });
 
     //normal cookie image + size decrease on touchend for mobile
     document.getElementById("cookie").addEventListener("touchend",() => {
-        document.getElementById("cookie").src = "./images/cookie.png";
+        document.getElementById("cookie").src = "./images/cookie.webp";
         document.getElementById("cookie").style.transform = "scale(1.0)";
         document.getElementById("score").style.transform = "scale(1.0)"
     });

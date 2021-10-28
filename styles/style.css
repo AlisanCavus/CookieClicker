@@ -216,6 +216,10 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         text-justify: inter-word;
     }
 
+    .butbut, .cookie, table {
+        z-index: 8;
+    }
+
 /*MEDIA QUERIES*/
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -319,9 +323,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         }
     }
 
-    * {
-        border-color: 1px solid red!important;
-    }
 
 
 
