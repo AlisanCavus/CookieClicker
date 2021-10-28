@@ -195,7 +195,7 @@
                 localStorage.score -= multiplierPrices[btn.id];
                 buttons();
                 multiplierStatus[btn.id] += 1;
-                multiplierPrices[btn.id] = multiplierStatus[btn.id] * 100 * parseInt(btn.id.charAt(1));
+                multiplierPrices[btn.id] = multiplierStatus[btn.id] * 300 * parseInt(btn.id.charAt(1));
                 localStorage.setItem("multiplierPrices", JSON.stringify(multiplierPrices));
                 localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus));
                 localStorage.mult = parseInt(localStorage.mult) * parseInt(btn.id.charAt(1));
