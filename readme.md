@@ -15,12 +15,12 @@ The website must contain a functional cookie clicker game that will preserve the
 **Site functionalities:**
 
 - Ability to purchase clicker multipliers and autoclickers at increasing prices
-- 'Features' table with a list of all multipliers and auticlickers purchased and cost of the next ones
+- 'Features' table with a list of all multipliers and autoclickers purchased and cost of the next ones
 - Purchase buttons that are dinamically enabled or disabled based on user score
 - Animation on cookie click for cookie image and score
 - Sound effect on cookie click and mute button with toggle functionality
 - Ongoing cookie rain animation
-- Information button that creates a pop-up with game instructions
+- Information button that opens a pop-up with the game instructions
 - Player progress saved via localStorage, so users can continue playing even after browser restart
 - Restart button to delete progress and start a new game
 
@@ -53,7 +53,8 @@ Tools
 
 ## Credits
 
-- Background image: [Wallpapercave.com](https://wallpapercave.com/wp/wp2589208.png)
+- Background image: [wallpapercave.com](https://wallpapercave.com/wp/wp2589208.png)
+- Cookie image: [pngwing.com](https://www.pngwing.com/en/free-png-nqwxp)
 - Cookie sound effect: "Chewing, Carrot, A.wav" by [InspectorJ](https://www.jshaw.co.uk) of [Freesound.org](https://Freesound.org)
 - Reload icon made by [kosonicon](https://www.flaticon.com/authors/kosonicon) from [flaticon.com](https://flaticon.com)
 - Info icon made by [Freepik](https://www.flaticon.com/authors/Freepik) from [flaticon.com](https://flaticon.com)
