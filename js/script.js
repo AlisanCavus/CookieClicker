@@ -68,11 +68,11 @@
 
     autoclickerRestart();
 
-    //autoclicker prices
+    //autoclicker prices -- 0 Alisan, 1 Daniel, 2 Shivani
     var autoClickerPrices = {
-        0 : 3, //test prices, to be changed
-        1 : 7,
-        2 : 12
+        0 : 50,
+        1 : 100,
+        2 : 150
     }
 
     //check if there is a 'autoClickerPrices' variable already in local storage, create one if not
@@ -81,9 +81,9 @@
 
     //multiplier prices
     var multiplierPrices = {
-        "x2": 1,
-        "x3": 5,
-        "x4": 10
+        "x2": 3000,
+        "x3": 6000,
+        "x4": 9000
     }
 
     //check if there is a 'multiplierPrices' variable already in local storage, create one if not
@@ -97,12 +97,8 @@
         "x4": 0
     }
 
-    //display the number of multipliers in the table
-
-
     //check if there is a 'multiplierStatus' variable already in local storage, create one if not
     localStorage.hasOwnProperty("multiplierStatus") ? multiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")) : localStorage.setItem("multiplierStatus", JSON.stringify(multiplierStatus)); 
-    //var parseMultiplierStatus = JSON.parse(localStorage.getItem("multiplierStatus")); //not needed atm
 
     //display multiplier and autoclicker numbers and prices
     display("auto");
@@ -112,10 +108,10 @@
 
     //bonus timer
     var bonus = 1;
-    var bonusPrice = 1; //test value, to be changed
+    var bonusPrice = 500;
     var timerId; //setting a global scope variable that can be accesed by the onclick event and countdown()
     var bonusOn = false; //switch to prevent user from creating more than one setInterval bonus
-    var bonusTimer = 5; //testing value, should be 30
+    var bonusTimer = 30;
     document.getElementById("bonus").addEventListener("click",() => {
             if (!bonusOn && localStorage.score >= bonusPrice) {
                 bonusOn = true;
@@ -133,7 +129,7 @@
             clearTimeout(timerId);
             bonus = 1;
             bonusOn = false;
-            bonusTimer = 5; //testing value, should be 30
+            bonusTimer = 30;
             document.getElementById("bonus").innerHTML = "Bonus"
         } else {
             document.getElementById("bonus").innerHTML = bonusTimer + " seconds"
