@@ -12,7 +12,7 @@ The website must contain a functional cookie clicker game that will preserve the
 
 [Exercise specifications](https://github.com/becodeorg/BXL-Swartz-5.34/blob/main/1.The-Field/12.Javascript/cookieClicker.md)
 
-Site functionalities:
+**Site functionalities:**
 
 - Ability to purchase clicker multipliers and autoclickers at increasing prices
 - 'Features' table with a list of all multipliers and auticlickers purchased and cost of the next ones
