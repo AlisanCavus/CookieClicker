@@ -162,7 +162,6 @@
         buttons();
         document.getElementById("score").innerHTML = localStorage.score;
         mute ? true : crunch.play();
-        console.log(localStorage.score); //test log, to be removed
     });
     
     //winky cookie image + size increase on mousedown
@@ -207,7 +206,6 @@
                 document.getElementById("score").innerHTML = localStorage.score;  
                 document.getElementById("m" + parseInt(btn.id.charAt(1))).innerHTML = multiplierStatus[btn.id];
                 document.getElementById("m" + parseInt(btn.id.charAt(1)) + "p").innerHTML = multiplierPrices[btn.id];
-                console.log(localStorage.score); //test log, to be removed
             }
         }),
     );
@@ -225,7 +223,6 @@
                 localStorage.setItem("autoclicker", JSON.stringify(autoclicker))
                 autoclickerFunction(btn.id);
                 display("autoPrices");  
-                console.log(localStorage.score); //test log, to be removed
             }
         }
         ),
@@ -236,7 +233,6 @@
             localStorage.score = parseInt(localStorage.score) + (parseInt(timer) + 3);
             buttons();
             document.getElementById("score").innerHTML = localStorage.score;
-            console.log(localStorage.score) //test log, to be removed
         }, 2000 * (parseInt(timer) + 2)));
 
         localStorage.interval = interval;
