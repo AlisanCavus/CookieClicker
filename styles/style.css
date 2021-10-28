@@ -285,9 +285,6 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             min-height: 100%;
             margin-bottom: -80px;
         }
-        .deskFooter {
-            height: 60px;
-        }
     }
     
 
@@ -320,6 +317,9 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         }
     }
 
+    * {
+        border-color: 1px solid red!important;
+    }
 
 
 
