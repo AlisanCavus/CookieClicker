@@ -173,6 +173,47 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
     display: none;
 }
 
+    /*popup*/
+    .info {
+        max-width: 3%;
+        cursor: pointer;
+    }
+    
+    .popup {
+        display: none;
+        position: fixed;
+        right: 6%;
+        left: 6%;
+        top: 10%;
+        z-index: 9;
+        max-width: 350px;
+        padding: 10px;
+        background-color: rgba(65, 192, 224, 1);
+        border: 2px solid rgba(126, 218, 241, 1);
+        box-shadow: 3px 3px rgba(81,161,253, 1);
+        text-align: center;
+    }
+
+    #center {
+        text-align: center; /*center the close button in the popup*/
+    }
+       
+    .form-container .cancel {
+      background-color: red;
+      color:white;
+    }
+
+    .howTo {
+        padding: 1%;
+        list-style: none;
+    }
+
+    .howTo li {
+        padding: 3% 0;
+        text-align: justify;
+        text-justify: inter-word;
+    }
+
 /*MEDIA QUERIES*/
     /* Medium devices (tablets, 768px and up) */
     @media (min-width: 768px) {
@@ -201,10 +242,25 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             display: none;
         }
 
+        .titleFold {    
+            display: none;
+        }
+
         .titleDesk {
             display: inherit;
         }
-        .butbut, .butbut:hover  { 
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9;
+            max-width: 350px;
+            padding: 10px;
+            overflow: auto;
+        }
+
+          .butbut, .butbut:hover  { 
             min-width: 150px;
         }
      }
@@ -214,6 +270,10 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
             width: 400px;
             height: 400px;
         } 
+
+        .titleFold {    
+            display: none;
+        }
 
         #oMeter, #score {
             font-size: 300%;
@@ -230,6 +290,36 @@ background: url("../images/bgCloudsMob.png") no-repeat center center fixed;
         }
     }
     
+
+    /* mobile except fold and iphone 5SE */
+    @media only screen and (min-width:321px ) and (max-width:767px) {  
+        .titleDesk {
+            display: none;
+        }
+
+        .titleMob { 
+            display: inherit;
+        }
+        
+        .titleFold {    
+            display: none;
+        }
+    }
+    /* mobile Fold and iphone 5SE */
+    @media (max-width:320px) {  
+        .titleDesk {    
+            display: none;
+        }
+
+        .titleMob {
+            display: none;
+        }
+
+        .titleFold {
+            display: inherit;
+        }
+    }
+
 
 
 
