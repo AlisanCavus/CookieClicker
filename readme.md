@@ -32,7 +32,7 @@ The website must contain a functional cookie clicker game that will preserve the
 
 ### Team composition
 
-[Alisan Canvus](https://github.com/AlisanCavus): Frontend development
+[Alisan Cavus](https://github.com/AlisanCavus): Frontend development
 
 [Daniel Diaz](https://github.com/Dan-DH): Frontend and backend development
 
