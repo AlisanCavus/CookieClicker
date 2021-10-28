@@ -194,6 +194,7 @@ background: url("../images/bgCloudsMob.webp") no-repeat center center fixed;
         border: 2px solid rgba(126, 218, 241, 1);
         box-shadow: 3px 3px rgba(81,161,253, 1);
         text-align: center;
+        cursor: pointer;
     }
 
     #center {
@@ -208,6 +209,7 @@ background: url("../images/bgCloudsMob.webp") no-repeat center center fixed;
     .howTo {
         padding: 1%;
         list-style: none;
+        margin: 0;
     }
 
     .howTo li {
@@ -308,6 +310,7 @@ background: url("../images/bgCloudsMob.webp") no-repeat center center fixed;
             display: none;
         }
     }
+
     /* mobile Fold and iphone 5SE */
     @media (max-width:320px) {  
         .titleDesk {    
@@ -321,8 +324,11 @@ background: url("../images/bgCloudsMob.webp") no-repeat center center fixed;
         .titleFold {
             display: inherit;
         }
+
+    /* for people who game on a kindle...*/
+    @media (width:800px ) {  
+        .popup {
+            top: 5%;
+        }
     }
-
-
-
-
+    }
