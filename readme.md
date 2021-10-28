@@ -2,7 +2,7 @@
 
 ## Website
 
-<a href="https://alisancavus.github.io/CookieClicker/" target="_blank" rel="noopener"><img src="https://github.com/AlisanCavus/CookieClicker/blob/main/images/screenshot.png?raw=true" alt="Placeholder" width="400"/></a>
+<a href="https://alisancavus.github.io/CookieClicker/" target="_blank" rel="noopener"><img src="https://github.com/AlisanCavus/CookieClicker/blob/main/images/screenshot.webp?raw=true" alt="Website link" width="400"/></a>
 
 ## Exercise
 
