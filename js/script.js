@@ -81,9 +81,9 @@
 
     //multiplier prices
     var multiplierPrices = {
-        "x2": 3000,
-        "x3": 6000,
-        "x4": 9000
+        "x2": 300,
+        "x3": 600,
+        "x4": 900
     }
 
     //check if there is a 'multiplierPrices' variable already in local storage, create one if not
